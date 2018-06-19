@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,zipfile," />
 
 
 
@@ -88,13 +88,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="山中小屋">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;破解zip文件需要用到python中的zipfile库，实例化ZipFile类，ZipFile类是用来创建和读取zip文件的，调用其extractall()方法。extractall([path[,member[,path[,pwd]]])    path:解压缩的目录   member:需要解压缩的文件列表   pwd:当zip文件有密码是需要该选">
+<meta name="keywords" content="python,zipfile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解压文件(选自python绝技)">
+<meta property="og:url" content="http://yoursite.com/2018/06/01/解压文件-选自python绝技/index.html">
 <meta property="og:site_name" content="山中小屋">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;破解zip文件需要用到python中的zipfile库，实例化ZipFile类，ZipFile类是用来创建和读取zip文件的，调用其extractall()方法。extractall([path[,member[,path[,pwd]]])    path:解压缩的目录   member:需要解压缩的文件列表   pwd:当zip文件有密码是需要该选">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-19T14:40:29.586Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="山中小屋">
+<meta name="twitter:title" content="解压文件(选自python绝技)">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;破解zip文件需要用到python中的zipfile库，实例化ZipFile类，ZipFile类是用来创建和读取zip文件的，调用其extractall()方法。extractall([path[,member[,path[,pwd]]])    path:解压缩的目录   member:需要解压缩的文件列表   pwd:当zip文件有密码是需要该选">
 
 
 
@@ -124,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/01/解压文件-选自python绝技/"/>
 
 
 
 
 
-  <title>山中小屋</title>
+  <title>解压文件(选自python绝技) | 山中小屋</title>
   
 
 
@@ -149,8 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -275,9 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/01/解压文件-选自python绝技/" itemprop="url">解压文件(选自python绝技)</a></h1>
+          <h1 class="post-title" itemprop="name headline">解压文件(选自python绝技)</h1>
         
 
         <div class="post-meta">
@@ -360,9 +362,7 @@
       
 
       
-        
-          
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;破解zip文件需要用到python中的zipfile库，实例化ZipFile类，ZipFile类是用来创建和读取zip文件的，调用其extractall()方法。<br><br><strong><em>extractall([path[,member[,path[,pwd]]])</em></strong>  </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;破解zip文件需要用到python中的zipfile库，实例化ZipFile类，ZipFile类是用来创建和读取zip文件的，调用其extractall()方法。<br><br><strong><em>extractall([path[,member[,path[,pwd]]])</em></strong>  </p>
 <ul>
 <li>path:解压缩的目录  </li>
 <li>member:需要解压缩的文件列表  </li>
@@ -374,14 +374,40 @@
 <p>最后附上一个简单的小破解程序，对原书的做了一些小修改。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import zipfile</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line">#定义一个破解的方法</span><br><span class="line">def extgractfile(zfile, password):</span><br><span class="line">    try:</span><br><span class="line">        zfile.extractall(pwd=password.encode())</span><br><span class="line">        print(password+&quot;++++++++++++++++++++++++++++++&quot;)</span><br><span class="line">    except Exception as e:</span><br><span class="line">        pass</span><br><span class="line">    return password</span><br><span class="line"></span><br><span class="line">def main(k):</span><br><span class="line">    zfile = zipfile.ZipFile(r&apos;abc.zip&apos;)</span><br><span class="line">    passfile = open(r&apos;dictionary.txt&apos;)</span><br><span class="line">    </span><br><span class="line">    list = []</span><br><span class="line">    for line in passfile.readline():</span><br><span class="line">        pas = line.strip(&apos;\n&apos;)</span><br><span class="line">        list.append(pas)</span><br><span class="line">    #没办法一个一个读取，只能自己拼接密码了</span><br><span class="line">    for i in range(len(list)):</span><br><span class="line">        #拼接到最后一个字符就退出</span><br><span class="line">        if (i + k &gt; len(list)):</span><br><span class="line">            return</span><br><span class="line">        pasword =&quot;&quot;.join(list[i:i+k])</span><br><span class="line">        print(pasword,len(pasword))</span><br><span class="line">        t = Thread(target=extgractfile,args=(zfile, pasword))</span><br><span class="line">        t.start()</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main(4)</span><br><span class="line">    #可以解压传统压缩模式，默认模式不行\</span><br><span class="line">    #加入了一个几位数密码的判读，这个不成熟，应该是某个范围的判断才更好一点</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
     
     
 	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>版权声明:</span><a href="/2018/06/01/解压文件-选自python绝技/" title="解压文件(选自python绝技)">http://yoursite.com/2018/06/01/解压文件-选自python绝技/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/06/01/解压文件-选自python绝技/"  aria-label="复制成功！"></i></span>
+  </p>
+  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
       
 	</div>
     
@@ -391,17 +417,31 @@
     
 	<div>
 		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------end-------------</div>
+    
+</div>
+		
 	</div>
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/zipfile/" rel="tag"><i class="fa fa-tag"></i> zipfile</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -411,10 +451,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -422,6 +463,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -649,6 +704,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -666,6 +725,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/06/01/解压文件-选自python绝技/';
+          this.page.identifier = '2018/06/01/解压文件-选自python绝技/';
+          this.page.title = '解压文件(选自python绝技)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
