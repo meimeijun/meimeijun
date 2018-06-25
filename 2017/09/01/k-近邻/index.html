@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="numpy,matplotlib," />
+  <meta name="keywords" content="python,numpy," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
-<meta name="keywords" content="numpy,matplotlib">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。1.先做一个简单的数据12345678910from numpy import *#简单数据def dataset():    &apos;&apos;&apos;    定义一个简单数据集    :return: train 数据集，labels 对应的标签    &apos;&apos;&apos;">
+<meta name="keywords" content="python,numpy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数笔记">
-<meta property="og:url" content="http://dword.top/2018/06/01/函数笔记/index.html">
+<meta property="og:title" content="k-近邻实现《机器学习实战》">
+<meta property="og:url" content="http://dword.top/2017/09/01/k-近邻/index.html">
 <meta property="og:site_name" content="山中小屋">
-<meta property="og:description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。1.先做一个简单的数据12345678910from numpy import *#简单数据def dataset():    &apos;&apos;&apos;    定义一个简单数据集    :return: train 数据集，labels 对应的标签    &apos;&apos;&apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-20T20:27:37.180Z">
+<meta property="og:updated_time" content="2018-06-25T03:19:22.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="函数笔记">
-<meta name="twitter:description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
+<meta name="twitter:title" content="k-近邻实现《机器学习实战》">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。1.先做一个简单的数据12345678910from numpy import *#简单数据def dataset():    &apos;&apos;&apos;    定义一个简单数据集    :return: train 数据集，labels 对应的标签    &apos;&apos;&apos;">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://dword.top/2018/06/01/函数笔记/"/>
+  <link rel="canonical" href="http://dword.top/2017/09/01/k-近邻/"/>
 
 
 
 
 
-  <title>函数笔记 | 山中小屋</title>
+  <title>k-近邻实现《机器学习实战》 | 山中小屋</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://dword.top/2018/06/01/函数笔记/">
+    <link itemprop="mainEntityOfPage" href="http://dword.top/2017/09/01/k-近邻/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="meimeijun">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">函数笔记</h1>
+          <h1 class="post-title" itemprop="name headline">k-近邻实现《机器学习实战》</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T08:00:00+08:00">
-                2018-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T08:00:00+08:00">
+                2017-09-01
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随记/" itemprop="url" rel="index">
-                    <span itemprop="name">随记</span>
+                  <a href="/categories/pythn/" itemprop="url" rel="index">
+                    <span itemprop="name">pythn</span>
                   </a>
                 </span>
 
@@ -332,9 +332,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/01/函数笔记/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/01/k-近邻/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/06/01/函数笔记/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/01/k-近邻/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,52 +362,16 @@
       
 
       
-        <h2 id="numpy中函数"><a href="#numpy中函数" class="headerlink" title="numpy中函数"></a>numpy中函数</h2><h3 id="min-用法"><a href="#min-用法" class="headerlink" title="min()用法"></a><font color="orange" size="3">min()用法</font><br></h3><p><font color="green" size="2">&lt;求指定维度的最小值，默认求所有值的最小值&gt;</font><br></p>
-<ul>
-<li><p>min(): 无参，返回所有中的最小值  </p>
-</li>
-<li><p>min(0):&nbsp; 等价于 axis=0, 每列的最小值 </p>
-</li>
-<li><p>min(1):&nbsp;等价于 axis=1,每行的最小值</p>
-</li>
-</ul>
-<h3 id="max-用法"><a href="#max-用法" class="headerlink" title="max()用法"></a><font color="orange" size="3"><strong>max()用法</strong></font><br></h3><p><font color="green" size="2">&lt;求指定维度的最大值，默认求所有值的最大值&gt;</font><br></p>
-<ul>
-<li>max(): 无参，所有中的最大值</li>
-<li>max(0):每列的最大值</li>
-<li>max(1):每行的最小值</li>
-</ul>
-<h3 id="sum-用法"><a href="#sum-用法" class="headerlink" title="sum()用法"></a><font color="orange" size="3"><strong>sum()用法</strong></font><br></h3><p><font color="green" size="2">&lt;求给定轴上的元素的和&gt;</font><br></p>
-<ul>
-<li>sum(axis=0): 求每列上的元素的和，返回一行</li>
-<li>sum(axis=1): 求每行上元素的和，返回一列</li>
-</ul>
-<h3 id="tile-用法"><a href="#tile-用法" class="headerlink" title="tile()用法"></a><font color="orange" size="3"><strong>tile()用法</strong></font><br></h3><p><font color="green" size="2">&lt;重复某个数组n次&gt;</font><br></p>
-<ul>
-<li>tile(a,2)==tile(a,(1,2)) 重复两次一行</li>
-<li>tile(a,(2,1) 生成一个二行一列数组</li>
-</ul>
-<h3 id="argsort-用法"><a href="#argsort-用法" class="headerlink" title="argsort()用法"></a><font color="orange" size="3"><strong>argsort()用法</strong></font><br></h3><p><font color="green" size="2">&lt;对矩阵进行排序，返回从小到大的索引矩阵&gt;</font><br><br><strong>二维矩阵</strong></p>
-<ul>
-<li>argsort(x,axis=0) 按列排序，返回所有索引矩阵</li>
-<li>argsort(x,axis=1) 按行排序，返回所有索引矩阵<br><strong>一维</strong></li>
-<li>argsort(x) 按列排序，返回所有从小到大索引矩阵</li>
-<li>argsort(-x) 按列排序，返回所有从大到小索引矩阵</li>
-</ul>
-<h3 id="shape-用法"><a href="#shape-用法" class="headerlink" title="shape()用法"></a><font color="orange" size="3"><strong>shape()用法</strong></font><br></h3><p><font color="green" size="2">&lt;返回指定维度的长度&gt;</font><br></p>
-<ul>
-<li>shape([1],[2]) 返回(2L,1L)</li>
-<li>shape(3) 返回()</li>
-<li>shape[0] 返回第一维度长度</li>
-</ul>
-<hr>
-<h2 id="matplotlib中函数"><a href="#matplotlib中函数" class="headerlink" title="matplotlib中函数"></a>matplotlib中函数</h2><h3 id="zeros-用法"><a href="#zeros-用法" class="headerlink" title="zeros()用法"></a><font color="orange" size="3"><strong>zeros()用法</strong></font><br></h3><p><font color="green" size="2">&lt;生成一个全为的0矩阵的函数&gt;</font><br></p>
-<ul>
-<li>zeros(m,n);生成一个m*n的零矩阵</li>
-<li>zeros(m);生成一个m*m的零矩阵</li>
-<li>zeros(m,n,k…);生成一个m <em> n </em> k …的零矩阵</li>
-<li>zeros(size \ shape(A));生成一个与矩阵A的维度一致的零矩阵</li>
-</ul>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。<br><strong>1.先做一个简单的数据</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#简单数据</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dataset</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    定义一个简单数据集</span></span><br><span class="line"><span class="string">    :return: train 数据集，labels 对应的标签</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    train = array([[<span class="number">1</span>, <span class="number">0.1</span>], [<span class="number">0</span>, <span class="number">0.1</span>], [<span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>]])</span><br><span class="line">    labels = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> train, labels</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.实现knn算法</strong><br>计算两个向量点xA和xB之间的距离需要使用到欧式距离公式  </p>
+<p>$d(x,y)=\sqrt{(x_1-y_1)^{2}+(x_2-y_2)^{2}+(x_n-y_n)^{2}}=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^{2}}$</p>
+<p>例如，点(0,0)与(1,2)之间的距离计算为： </p>
+<p>$\sqrt{(1-0)^{2}+(2-0)^{2}}$</p>
+<p>如果数据集存在4个特征值， 则点(1,0,0,1)与(7,6,9,4)之间的距离计算为:</p>
+<p>$\sqrt{(7-1)^{2}+(6-0)^{2}+(9-0)^{2}+(4-1)^{2}}$</p>
+<p>计算完距离以后对数据进行从小到的排序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Knn</span><span class="params">(inputdate, train, lablel , k)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    首先是要做欧式距离运算的，所以首先</span></span><br><span class="line"><span class="string">    1.是把输入的指矩阵进行复制可与测试的模型进行运算</span></span><br><span class="line"><span class="string">    2.排序以后取前k个相近的值进行分类</span></span><br><span class="line"><span class="string">    3.返回那个分类</span></span><br><span class="line"><span class="string">    :param inputdate: 测试数据</span></span><br><span class="line"><span class="string">    :param train: 样本数据</span></span><br><span class="line"><span class="string">    :param lablel: 样本数据标签</span></span><br><span class="line"><span class="string">    :param k: k值</span></span><br><span class="line"><span class="string">    :return: 最近标签</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="comment">#对输入数据做处理，跟样本数据一样的维度大小</span></span><br><span class="line">    inputdata = tile(inputdate,(train.shape[<span class="number">0</span>],<span class="number">1</span>))</span><br><span class="line">    <span class="comment">#对数据集做欧式距离运算</span></span><br><span class="line">    vla = (inputdata - train)**<span class="number">2</span></span><br><span class="line">    vlaue = (vla.sum(axis=<span class="number">1</span>))**<span class="number">0.05</span></span><br><span class="line">    <span class="comment">#返回从小到大的索引</span></span><br><span class="line">    sortval = vlaue.argsort()</span><br><span class="line">    dict = &#123;&#125;</span><br><span class="line">    <span class="comment">#取前k个值</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        <span class="comment">#保存成对应的键值对</span></span><br><span class="line">        dict[vlaue[sortval[i]]]=lablel[sortval[i]]</span><br><span class="line">    sortcalsscount = sorted(dict.items(), key=<span class="keyword">lambda</span> item: item[<span class="number">0</span>])</span><br><span class="line">    print(<span class="string">"排序以后的%"</span>,sortcalsscount)</span><br><span class="line">    <span class="keyword">return</span> sortcalsscount[<span class="number">0</span>][<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>如果想用现有的数据集，对数据集进行特征抽取，下一篇有做介绍</p>
 
       
     </div>
@@ -423,8 +387,8 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p>版权声明:本文为博主原创，如若转载请标明出处<a href="/2018/06/01/函数笔记/" title="函数笔记">http://dword.top/2018/06/01/函数笔记/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://dword.top/2018/06/01/函数笔记/"  aria-label="复制成功！"></i></span>
+  <p>版权声明:本文为博主原创，如若转载请标明出处<a href="/2017/09/01/k-近邻/" title="k-近邻实现《机器学习实战》">http://dword.top/2017/09/01/k-近邻/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://dword.top/2017/09/01/k-近邻/"  aria-label="复制成功！"></i></span>
   </p>
   
 </div>
@@ -463,9 +427,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/numpy/" rel="tag"><i class="fa fa-tag"></i> numpy</a>
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           
-            <a href="/tags/matplotlib/" rel="tag"><i class="fa fa-tag"></i> matplotlib</a>
+            <a href="/tags/numpy/" rel="tag"><i class="fa fa-tag"></i> numpy</a>
           
         </div>
       
@@ -479,8 +443,8 @@
           <div class="post-nav-next post-nav-item">
             
 			
-              <a href="/2018/06/01/k-近邻/" rel="prev" title="k-近邻实现《机器学习实战》">
-                k-近邻实现《机器学习实战》 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/01/函数笔记/" rel="prev" title="函数笔记">
+                函数笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -489,8 +453,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-			  <a href="/2018/06/01/hexo数学公式渲染/" rel="next" title="在Hexo中渲染MathJax数学公式">
-                <i class="fa fa-chevron-left"></i> 在Hexo中渲染MathJax数学公式
+			  <a href="/2017/09/01/算法对比/" rel="next" title="算法对比">
+                <i class="fa fa-chevron-left"></i> 算法对比
               
               </a>
             
@@ -595,17 +559,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -624,7 +579,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -676,22 +631,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy中函数"><span class="nav-number">1.</span> <span class="nav-text">numpy中函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#min-用法"><span class="nav-number">1.1.</span> <span class="nav-text">min()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-用法"><span class="nav-number">1.2.</span> <span class="nav-text">max()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum-用法"><span class="nav-number">1.3.</span> <span class="nav-text">sum()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tile-用法"><span class="nav-number">1.4.</span> <span class="nav-text">tile()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#argsort-用法"><span class="nav-number">1.5.</span> <span class="nav-text">argsort()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shape-用法"><span class="nav-number">1.6.</span> <span class="nav-text">shape()用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matplotlib中函数"><span class="nav-number">2.</span> <span class="nav-text">matplotlib中函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zeros-用法"><span class="nav-number">2.1.</span> <span class="nav-text">zeros()用法</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -832,9 +771,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://dword.top/2018/06/01/函数笔记/';
-          this.page.identifier = '2018/06/01/函数笔记/';
-          this.page.title = '函数笔记';
+          this.page.url = 'http://dword.top/2017/09/01/k-近邻/';
+          this.page.identifier = '2017/09/01/k-近邻/';
+          this.page.title = 'k-近邻实现《机器学习实战》';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
