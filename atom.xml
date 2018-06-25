@@ -139,9 +139,9 @@
       <category term="pythn" scheme="http://dword.top/categories/pythn/"/>
     
     
-      <category term="python" scheme="http://dword.top/tags/python/"/>
-    
       <category term="numpy" scheme="http://dword.top/tags/numpy/"/>
+    
+      <category term="python" scheme="http://dword.top/tags/python/"/>
     
   </entry>
   
