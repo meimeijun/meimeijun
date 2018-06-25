@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="山中小屋">
 <meta property="og:description" content="转: https://www.jianshu.com/p/7ab21c7f0674在用markdown写技术文档时，免不了会碰到数学公式。常用的Markdown编辑器都会集成Mathjax，用来渲染文档中的类Latex格式书写的数学公式。基于Hexo搭建的个人博客，默认情况下渲染数学公式却会出现各种各样的问题。 原因Hexo默认使用”hexo-renderer-marked”引擎渲染网页，该引擎会">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-25T10:14:43.031Z">
+<meta property="og:updated_time" content="2018-06-25T17:23:50.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Hexo中渲染MathJax数学公式">
 <meta name="twitter:description" content="转: https://www.jianshu.com/p/7ab21c7f0674在用markdown写技术文档时，免不了会碰到数学公式。常用的Markdown编辑器都会集成Mathjax，用来渲染文档中的类Latex格式书写的数学公式。基于Hexo搭建的个人博客，默认情况下渲染数学公式却会出现各种各样的问题。 原因Hexo默认使用”hexo-renderer-marked”引擎渲染网页，该引擎会">
@@ -109,7 +109,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -366,7 +366,7 @@
 <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Hexo默认使用”hexo-renderer-marked”引擎渲染网页，该引擎会把一些特殊的markdown符号转换为相应的html标签，比如在markdown语法中，下划线’_’代表斜体，会被渲染引擎处理为&lt;em&gt;标签。<br>因为类Latex格式书写的数学公式下划线 ‘_’ 表示下标，有特殊的含义，如果被强制转换为<code>&lt;em&gt;</code>标签，那么MathJax引擎在渲染数学公式的时候就会出错。例如，$x_i$在开始被渲染的时候，处理为$x<code>&lt;em&gt;</code>i<code>&lt;/em&gt;</code>$，这样MathJax引擎就认为该公式有语法错误，因为不会渲染。<br>类似的语义冲突的符号还包括’*’, ‘{‘, ‘}’, ‘\’等。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>解决方案有很多，可以网上搜下，为了节省大家的时间，这里只提供亲身测试过的最靠谱的方法。<br>更换Hexo的markdown渲染引擎，<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fsun11%2Fhexo-renderer-kramed" target="_blank" rel="nofollow">hexo-renderer-kramed</a>引擎是在默认的渲染引擎<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fhexojs%2Fhexo-renderer-marked" target="_blank" rel="nofollow">hexo-renderer-marked</a>的基础上修改了一些bug，两者比较接近，也比较轻量级。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">uninstall</span> hexo-renderer-marked <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-kramed <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<p>执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。<br>然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fsun11%2Fhexo-renderer-kramed" target="_blank" rel="nofollow">hexo-renderer-kramed</a>引擎也有语义冲突的问题。接下来到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的escape变量的值做相应的修改：</p>
+<p>执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。<br><a id="more"></a><br>然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fsun11%2Fhexo-renderer-kramed" target="_blank" rel="nofollow">hexo-renderer-kramed</a>引擎也有语义冲突的问题。接下来到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的escape变量的值做相应的修改：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  escape: /^\\([<span class="string">\\`*&#123;&#125;\[\</span>](<span class="link"></span>)#$+\-.!_&amp;gt;])/,</span><br><span class="line">escape: /^\\([<span class="string">`*\[\</span>](<span class="link"></span>)#$+\-.!_&amp;gt;])/</span><br></pre></td></tr></table></figure>
 <p>这一步是在原基础上取消了对\,{,}的转义(escape)。<br><br>同时把第20行的em变量也要做相应的修改。</p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  em: /^<span class="symbol">\b</span>_((?:__|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)_<span class="symbol">\b</span>|^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line">em: /^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/</span><br></pre></td></tr></table></figure>
@@ -526,8 +526,6 @@
 
   <aside id="sidebar" class="sidebar">
     
-      <div id="sidebar-dimmer"></div>
-    
 
     <div class="sidebar-inner">
 
@@ -666,6 +664,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

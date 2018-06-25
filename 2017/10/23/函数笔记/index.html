@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="山中小屋">
 <meta property="og:description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-25T10:14:07.289Z">
+<meta property="og:updated_time" content="2018-06-25T17:24:40.835Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数笔记">
 <meta name="twitter:description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
@@ -109,7 +109,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -375,10 +375,8 @@
 <ul>
 <li>max(): 无参，所有中的最大值</li>
 <li>max(0):每列的最大值</li>
-<li>max(1):每行的最小值</li>
-</ul>
-<h3 id="sum-用法"><a href="#sum-用法" class="headerlink" title="sum()用法"></a><font color="orange" size="3"><strong>sum()用法</strong></font><br></h3><p><font color="green" size="2">&lt;求给定轴上的元素的和&gt;</font><br></p>
-<ul>
+<li>max(1):每行的最小值<a id="more"></a>
+<h3 id="sum-用法"><a href="#sum-用法" class="headerlink" title="sum()用法"></a><font color="orange" size="3"><strong>sum()用法</strong></font><br></h3><font color="green" size="2">&lt;求给定轴上的元素的和&gt;</font><br></li>
 <li>sum(axis=0): 求每列上的元素的和，返回一行</li>
 <li>sum(axis=1): 求每行上元素的和，返回一列</li>
 </ul>
@@ -587,8 +585,6 @@
 
   <aside id="sidebar" class="sidebar">
     
-      <div id="sidebar-dimmer"></div>
-    
 
     <div class="sidebar-inner">
 
@@ -727,6 +723,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

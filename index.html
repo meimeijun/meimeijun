@@ -107,7 +107,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -364,8 +364,7 @@
 
       
         
-          
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;破解zip文件需要用到python中的zipfile库，实例化ZipFile类，ZipFile类是用来创建和读取zip文件的，调用其extractall()方法。<br><br><strong><em>extractall([path[,member[,path[,pwd]]])</em></strong>  </p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;破解zip文件需要用到python中的zipfile库，实例化ZipFile类，ZipFile类是用来创建和读取zip文件的，调用其extractall()方法。<br><br><strong><em>extractall([path[,member[,path[,pwd]]])</em></strong>  </p>
 <ul>
 <li>path:解压缩的目录  </li>
 <li>member:需要解压缩的文件列表  </li>
@@ -374,10 +373,14 @@
 <p>看下面实例:<br></p>
 <p>>&gt;&gt; import zipfile<br>>&gt;&gt; zipfile = zipfile.ZipFile(r’D:\pycharm_obj\abc.zip’)<br>>&gt;&gt; zipfile.extractall(‘1234’)  </p>
 <p>运行以后显示密码不正确，查看以后发现是一个字符一个字符读取，但我看资料大多都这样写不知道怎么回事，应该是版本有点变化了，我的版本是3.6。</p>
-<p>最后附上一个简单的小破解程序，对原书的做了一些小修改。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义一个破解的方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extgractfile</span><span class="params">(zfile, password)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        zfile.extractall(pwd=password.encode())</span><br><span class="line">        print(password+<span class="string">"++++++++++++++++++++++++++++++"</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> password</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(k)</span>:</span></span><br><span class="line">    zfile = zipfile.ZipFile(<span class="string">r'abc.zip'</span>)</span><br><span class="line">    passfile = open(<span class="string">r'dictionary.txt'</span>)</span><br><span class="line">    </span><br><span class="line">    list = []</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> passfile.readline():</span><br><span class="line">        pas = line.strip(<span class="string">'\n'</span>)</span><br><span class="line">        list.append(pas)</span><br><span class="line">    <span class="comment">#没办法一个一个读取，只能自己拼接密码了</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(list)):</span><br><span class="line">        <span class="comment">#拼接到最后一个字符就退出</span></span><br><span class="line">        <span class="keyword">if</span> (i + k &gt; len(list)):</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        pasword =<span class="string">""</span>.join(list[i:i+k])</span><br><span class="line">        print(pasword,len(pasword))</span><br><span class="line">        t = Thread(target=extgractfile,args=(zfile, pasword))</span><br><span class="line">        t.start()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main(<span class="number">4</span>)</span><br><span class="line">    <span class="comment">#可以解压传统压缩模式，默认模式不行\</span></span><br><span class="line">    <span class="comment">#加入了一个几位数密码的判读，这个不成熟，应该是某个范围的判断才更好一点</span></span><br></pre></td></tr></table></figure>
-
-          
+<p>最后附上一个简单的小破解程序，对原书的做了一些小修改。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/15/解压文件-选自python绝技/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -538,19 +541,7 @@
 <p><font color="green" size="3">stop it</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[ˈstɑpɪt]</font><br>住手  </p>
 <h4 id="t-元音"><a href="#t-元音" class="headerlink" title="[t] + 元音"></a>[t] + 元音</h4><p><font color="green" size="3">put it on</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[pʊtɪ ˈɑn]</font><br>把它穿上  </p>
 <p><font color="green" size="3">not at all</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[nɑtæ ˈtɔl]</font><br>一点也不  </p>
-<p><font color="green" size="3">put it off</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[pʊtɪ ˈtɔf] </font><br>把它延期    </p>
-<h4 id="d-元音"><a href="#d-元音" class="headerlink" title="[d] + 元音"></a>[d] + 元音</h4><p><font color="green" size="3">stand up</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[stæn ˈdʌp]</font><br>站起来  </p>
-<p><font color="green" size="3">good idea</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[ɡʊdaɪ ˈdiə] </font><br>好主意  </p>
-<p><font color="green" size="3">Dad and Mom</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[dædənd ˈmɑm] </font><br>老爸和老妈</p>
-<h4 id="k-元音"><a href="#k-元音" class="headerlink" title="[k] + 元音"></a>[k] + 元音</h4><p><font color="green" size="3">take off</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[te ˈkɔf]</font><br>起飞  </p>
-<p><font color="green" size="3">pick it up</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[pɪkɪ ˈtʌp]</font><br>把它拾起来  </p>
-<p><font color="green" size="3">knock him out</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[nɑkə ˈmaʊt]</font><br>把他击晕  </p>
-<h4 id="n-元音"><a href="#n-元音" class="headerlink" title="[n] + 元音"></a>[n] + 元音</h4><p><font color="green" size="3">in an hour</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[Inə ˈnaʊr]</font><br>一个小时后  </p>
-<p><font color="green" size="3">pen and paper</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[pɛnənd ˈpepər] </font><br>纸和笔  </p>
-<p><font color="green" size="3">clean and tidy</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[klinənd ˈtaɪdi] </font><br>干净又整洁  </p>
-<h4 id="r-元音"><a href="#r-元音" class="headerlink" title="[r] + 元音"></a>[r] + 元音</h4><p><font color="green" size="3">far away</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[fɑrə ˈwe]</font><br>遥远的  </p>
-<p><font color="green" size="3">pair of shoes</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[pɛrəv ‘ʃuz] </font><br>一双鞋  </p>
-<p><font color="green" size="3">for instance</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[fɔ ‘rɪnstəns]  </font><br>举例说明<br>
+<p><font color="green" size="3">put it off</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="orange" size="3">[pʊtɪ ˈtɔf] </font><br>把它延期<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/13/连读/#more" rel="contents">
@@ -711,8 +702,7 @@
 
       
         
-          
-            <h2 id="numpy中函数"><a href="#numpy中函数" class="headerlink" title="numpy中函数"></a>numpy中函数</h2><h3 id="min-用法"><a href="#min-用法" class="headerlink" title="min()用法"></a><font color="orange" size="3">min()用法</font><br></h3><p><font color="green" size="2">&lt;求指定维度的最小值，默认求所有值的最小值&gt;</font><br></p>
+          <h2 id="numpy中函数"><a href="#numpy中函数" class="headerlink" title="numpy中函数"></a>numpy中函数</h2><h3 id="min-用法"><a href="#min-用法" class="headerlink" title="min()用法"></a><font color="orange" size="3">min()用法</font><br></h3><p><font color="green" size="2">&lt;求指定维度的最小值，默认求所有值的最小值&gt;</font><br></p>
 <ul>
 <li><p>min(): 无参，返回所有中的最小值  </p>
 </li>
@@ -725,41 +715,14 @@
 <ul>
 <li>max(): 无参，所有中的最大值</li>
 <li>max(0):每列的最大值</li>
-<li>max(1):每行的最小值</li>
-</ul>
-<h3 id="sum-用法"><a href="#sum-用法" class="headerlink" title="sum()用法"></a><font color="orange" size="3"><strong>sum()用法</strong></font><br></h3><p><font color="green" size="2">&lt;求给定轴上的元素的和&gt;</font><br></p>
-<ul>
-<li>sum(axis=0): 求每列上的元素的和，返回一行</li>
-<li>sum(axis=1): 求每行上元素的和，返回一列</li>
-</ul>
-<h3 id="tile-用法"><a href="#tile-用法" class="headerlink" title="tile()用法"></a><font color="orange" size="3"><strong>tile()用法</strong></font><br></h3><p><font color="green" size="2">&lt;重复某个数组n次&gt;</font><br></p>
-<ul>
-<li>tile(a,2)==tile(a,(1,2)) 重复两次一行</li>
-<li>tile(a,(2,1) 生成一个二行一列数组</li>
-</ul>
-<h3 id="argsort-用法"><a href="#argsort-用法" class="headerlink" title="argsort()用法"></a><font color="orange" size="3"><strong>argsort()用法</strong></font><br></h3><p><font color="green" size="2">&lt;对矩阵进行排序，返回从小到大的索引矩阵&gt;</font><br><br><strong>二维矩阵</strong></p>
-<ul>
-<li>argsort(x,axis=0) 按列排序，返回所有索引矩阵</li>
-<li>argsort(x,axis=1) 按行排序，返回所有索引矩阵<br><strong>一维</strong></li>
-<li>argsort(x) 按列排序，返回所有从小到大索引矩阵</li>
-<li>argsort(-x) 按列排序，返回所有从大到小索引矩阵</li>
-</ul>
-<h3 id="shape-用法"><a href="#shape-用法" class="headerlink" title="shape()用法"></a><font color="orange" size="3"><strong>shape()用法</strong></font><br></h3><p><font color="green" size="2">&lt;返回指定维度的长度&gt;</font><br></p>
-<ul>
-<li>shape([1],[2]) 返回(2L,1L)</li>
-<li>shape(3) 返回()</li>
-<li>shape[0] 返回第一维度长度</li>
-</ul>
-<hr>
-<h2 id="matplotlib中函数"><a href="#matplotlib中函数" class="headerlink" title="matplotlib中函数"></a>matplotlib中函数</h2><h3 id="zeros-用法"><a href="#zeros-用法" class="headerlink" title="zeros()用法"></a><font color="orange" size="3"><strong>zeros()用法</strong></font><br></h3><p><font color="green" size="2">&lt;生成一个全为的0矩阵的函数&gt;</font><br></p>
-<ul>
-<li>zeros(m,n);生成一个m*n的零矩阵</li>
-<li>zeros(m);生成一个m*m的零矩阵</li>
-<li>zeros(m,n,k…);生成一个m <em> n </em> k …的零矩阵</li>
-<li>zeros(size \ shape(A));生成一个与矩阵A的维度一致的零矩阵</li>
-</ul>
-
-          
+<li>max(1):每行的最小值
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/23/函数笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -913,19 +876,20 @@
 
       
         
-          
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。<br><strong>1.先做一个简单的数据</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#简单数据</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dataset</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    定义一个简单数据集</span></span><br><span class="line"><span class="string">    :return: train 数据集，labels 对应的标签</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    train = array([[<span class="number">1</span>, <span class="number">0.1</span>], [<span class="number">0</span>, <span class="number">0.1</span>], [<span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>]])</span><br><span class="line">    labels = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> train, labels</span><br></pre></td></tr></table></figure></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。<br><strong>1.先做一个简单的数据</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#简单数据</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dataset</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    定义一个简单数据集</span></span><br><span class="line"><span class="string">    :return: train 数据集，labels 对应的标签</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    train = array([[<span class="number">1</span>, <span class="number">0.1</span>], [<span class="number">0</span>, <span class="number">0.1</span>], [<span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>]])</span><br><span class="line">    labels = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> train, labels</span><br></pre></td></tr></table></figure></p>
 <p><strong>2.实现knn算法</strong><br>计算两个向量点xA和xB之间的距离需要使用到欧式距离公式  </p>
 <p>$d(x,y)=\sqrt{(x_1-y_1)^{2}+(x_2-y_2)^{2}+(x_n-y_n)^{2}}=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^{2}}$</p>
 <p>例如，点(0,0)与(1,2)之间的距离计算为： </p>
 <p>$\sqrt{(1-0)^{2}+(2-0)^{2}}$</p>
 <p>如果数据集存在4个特征值， 则点(1,0,0,1)与(7,6,9,4)之间的距离计算为:</p>
 <p>$\sqrt{(7-1)^{2}+(6-0)^{2}+(9-0)^{2}+(4-1)^{2}}$</p>
-<p>计算完距离以后对数据进行从小到的排序</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Knn</span><span class="params">(inputdate, train, lablel , k)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    首先是要做欧式距离运算的，所以首先</span></span><br><span class="line"><span class="string">    1.是把输入的指矩阵进行复制可与测试的模型进行运算</span></span><br><span class="line"><span class="string">    2.排序以后取前k个相近的值进行分类</span></span><br><span class="line"><span class="string">    3.返回那个分类</span></span><br><span class="line"><span class="string">    :param inputdate: 测试数据</span></span><br><span class="line"><span class="string">    :param train: 样本数据</span></span><br><span class="line"><span class="string">    :param lablel: 样本数据标签</span></span><br><span class="line"><span class="string">    :param k: k值</span></span><br><span class="line"><span class="string">    :return: 最近标签</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="comment">#对输入数据做处理，跟样本数据一样的维度大小</span></span><br><span class="line">    inputdata = tile(inputdate,(train.shape[<span class="number">0</span>],<span class="number">1</span>))</span><br><span class="line">    <span class="comment">#对数据集做欧式距离运算</span></span><br><span class="line">    vla = (inputdata - train)**<span class="number">2</span></span><br><span class="line">    vlaue = (vla.sum(axis=<span class="number">1</span>))**<span class="number">0.05</span></span><br><span class="line">    <span class="comment">#返回从小到大的索引</span></span><br><span class="line">    sortval = vlaue.argsort()</span><br><span class="line">    dict = &#123;&#125;</span><br><span class="line">    <span class="comment">#取前k个值</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        <span class="comment">#保存成对应的键值对</span></span><br><span class="line">        dict[vlaue[sortval[i]]]=lablel[sortval[i]]</span><br><span class="line">    sortcalsscount = sorted(dict.items(), key=<span class="keyword">lambda</span> item: item[<span class="number">0</span>])</span><br><span class="line">    print(<span class="string">"排序以后的%"</span>,sortcalsscount)</span><br><span class="line">    <span class="keyword">return</span> sortcalsscount[<span class="number">0</span>][<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<p>如果想用现有的数据集，对数据集进行特征抽取，下一篇有做介绍</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/29/k-近邻/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1079,32 +1043,16 @@
 
       
         
-          
-            <h2 id="算法分类"><a href="#算法分类" class="headerlink" title="算法分类"></a>算法分类</h2><h3 id="监督学习-输入征值-目标值。输出可以是一个连接的值-称为回归-或是有限离散值-分类"><a href="#监督学习-输入征值-目标值。输出可以是一个连接的值-称为回归-或是有限离散值-分类" class="headerlink" title="监督学习(输入征值+目标值。输出可以是一个连接的值(称为回归)或是有限离散值(分类)"></a><font color="green" size="3">监督学习(输入征值+目标值。输出可以是一个连接的值(称为回归)或是有限离散值(分类)</font><br></h3><h4 id="分类-lt-模型评估用查准率，查全率，精度，错误率-gt"><a href="#分类-lt-模型评估用查准率，查全率，精度，错误率-gt" class="headerlink" title="分类&lt;模型评估用查准率，查全率，精度，错误率&gt;"></a><font color="orange" size="3">分类&lt;模型评估用查准率，查全率，精度，错误率&gt;</font><br></h4><p>k-近邻(kneighbors)、贝叶斯(naive_bayes)分类、决策树与随机森林(randomForestClassifier)、逻辑回归(LogisticRegression)、神经网络<br></p>
+          <h2 id="算法分类"><a href="#算法分类" class="headerlink" title="算法分类"></a>算法分类</h2><h3 id="监督学习-输入征值-目标值。输出可以是一个连接的值-称为回归-或是有限离散值-分类"><a href="#监督学习-输入征值-目标值。输出可以是一个连接的值-称为回归-或是有限离散值-分类" class="headerlink" title="监督学习(输入征值+目标值。输出可以是一个连接的值(称为回归)或是有限离散值(分类)"></a><font color="green" size="3">监督学习(输入征值+目标值。输出可以是一个连接的值(称为回归)或是有限离散值(分类)</font><br></h3><h4 id="分类-lt-模型评估用查准率，查全率，精度，错误率-gt"><a href="#分类-lt-模型评估用查准率，查全率，精度，错误率-gt" class="headerlink" title="分类&lt;模型评估用查准率，查全率，精度，错误率&gt;"></a><font color="orange" size="3">分类&lt;模型评估用查准率，查全率，精度，错误率&gt;</font><br></h4><p>k-近邻(kneighbors)、贝叶斯(naive_bayes)分类、决策树与随机森林(randomForestClassifier)、逻辑回归(LogisticRegression)、神经网络<br></p>
 <h4 id="回归-lt-模型评估用局方误差-gt"><a href="#回归-lt-模型评估用局方误差-gt" class="headerlink" title="回归&lt;模型评估用局方误差&gt;"></a><font color="orange" size="3">回归&lt;模型评估用局方误差&gt;</font><br></h4><p>线性回归(LinearRegression)、岭回归(Ridge)<br></p>
 <h4 id="标注-隐马尔可夫模型"><a href="#标注-隐马尔可夫模型" class="headerlink" title="标注 隐马尔可夫模型"></a><font color="orange" size="3">标注 隐马尔可夫模型</font><br></h4><h3 id="无监督学习-输入特征值推测新的结果"><a href="#无监督学习-输入特征值推测新的结果" class="headerlink" title="无监督学习(输入特征值推测新的结果)"></a><font color="green" size="3">无监督学习(输入特征值推测新的结果)</font><br></h3><p>&nbsp;聚类 k-means</p>
-<hr>
-<h2 id="算法优缺点对比"><a href="#算法优缺点对比" class="headerlink" title="算法优缺点对比"></a>算法优缺点对比</h2><h3 id="k-近邻-小数据场景，几千-几万样本"><a href="#k-近邻-小数据场景，几千-几万样本" class="headerlink" title="k-近邻(小数据场景，几千~几万样本)"></a>k-近邻(小数据场景，几千~几万样本)</h3><p>采用欧式距离公式计算亮点之间的距离</p>
-<ul>
-<li>优点<br>&nbsp;&nbsp;简单，易于理解，易于实现，无需估计参数，无需训练<br></li>
-<li>缺点<br>&nbsp;&nbsp;1.  测试样本计算量打，内存开销大<br><br>&nbsp;&nbsp;2. 必须指定k值，k值选择不当则分类精度不能保证</li>
-</ul>
-<hr>
-<h3 id="朴素贝叶斯分类-MultinomiaLNB"><a href="#朴素贝叶斯分类-MultinomiaLNB" class="headerlink" title="朴素贝叶斯分类(MultinomiaLNB)"></a>朴素贝叶斯分类(MultinomiaLNB)</h3><ul>
-<li>优点：<br><br>&nbsp;&nbsp;1.有稳定的分类效率<br>&nbsp;&nbsp;2.对确实数据不太敏感，算法也比较简单，常用于文本分类。<br>&nbsp;&nbsp;3.分类准确度高，速度快。  </li>
-<li>缺点：<br>&nbsp;&nbsp;  需要知道先验概率P（F1，F2…|C).因此在某些时候会犹豫假设的先验模型的原因导致预测效果不佳。<br></li>
-</ul>
-<hr>
-<h3 id="kmeans"><a href="#kmeans" class="headerlink" title="kmeans"></a>kmeans</h3><ul>
-<li><p>特点分析：采用迭代式算法，直观易懂并且非常实用。  </p>
-</li>
-<li><p>缺点：容易收敛到局部最优解(多次聚类)<br><br>&nbsp;&nbsp;需要预先设定簇的数量(k-means++解决)</p>
-</li>
-</ul>
-<hr>
-<h3 id="随机森林-大数据集"><a href="#随机森林-大数据集" class="headerlink" title="随机森林(大数据集)"></a>随机森林(大数据集)</h3><p>&nbsp;&nbsp;1. 在当前所有算法中，具有极好的准确率。<br><br>&nbsp;&nbsp;2. 能够有效的运行在大数据集上。<br><br>&nbsp;&nbsp;3. 能够处理高维特征，不需要降维。<br><br>&nbsp;&nbsp;4. 能够评估各个特征在分类问题上的重要性。<br><br>&nbsp;&nbsp;5. 对于缺省值问题也能够活得很好的结果。<br></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/28/算法对比/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1258,22 +1206,18 @@
 
       
         
-          
-            <h2 id="转-https-www-jianshu-com-p-7ab21c7f0674"><a href="#转-https-www-jianshu-com-p-7ab21c7f0674" class="headerlink" title="转: https://www.jianshu.com/p/7ab21c7f0674"></a>转: <a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="nofollow">https://www.jianshu.com/p/7ab21c7f0674</a></h2><p>在用markdown写技术文档时，免不了会碰到数学公式。常用的Markdown编辑器都会集成<a href="https://link.jianshu.com?t=https%3A%2F%2Fwww.mathjax.org%2F" target="_blank" rel="nofollow">Mathjax</a>，用来渲染文档中的类Latex格式书写的数学公式。基于Hexo搭建的个人博客，默认情况下渲染数学公式却会出现各种各样的问题。</p>
+          <h2 id="转-https-www-jianshu-com-p-7ab21c7f0674"><a href="#转-https-www-jianshu-com-p-7ab21c7f0674" class="headerlink" title="转: https://www.jianshu.com/p/7ab21c7f0674"></a>转: <a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="nofollow">https://www.jianshu.com/p/7ab21c7f0674</a></h2><p>在用markdown写技术文档时，免不了会碰到数学公式。常用的Markdown编辑器都会集成<a href="https://link.jianshu.com?t=https%3A%2F%2Fwww.mathjax.org%2F" target="_blank" rel="nofollow">Mathjax</a>，用来渲染文档中的类Latex格式书写的数学公式。基于Hexo搭建的个人博客，默认情况下渲染数学公式却会出现各种各样的问题。</p>
 <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Hexo默认使用”hexo-renderer-marked”引擎渲染网页，该引擎会把一些特殊的markdown符号转换为相应的html标签，比如在markdown语法中，下划线’_’代表斜体，会被渲染引擎处理为&lt;em&gt;标签。<br>因为类Latex格式书写的数学公式下划线 ‘_’ 表示下标，有特殊的含义，如果被强制转换为<code>&lt;em&gt;</code>标签，那么MathJax引擎在渲染数学公式的时候就会出错。例如，$x_i$在开始被渲染的时候，处理为$x<code>&lt;em&gt;</code>i<code>&lt;/em&gt;</code>$，这样MathJax引擎就认为该公式有语法错误，因为不会渲染。<br>类似的语义冲突的符号还包括’*’, ‘{‘, ‘}’, ‘\’等。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>解决方案有很多，可以网上搜下，为了节省大家的时间，这里只提供亲身测试过的最靠谱的方法。<br>更换Hexo的markdown渲染引擎，<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fsun11%2Fhexo-renderer-kramed" target="_blank" rel="nofollow">hexo-renderer-kramed</a>引擎是在默认的渲染引擎<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fhexojs%2Fhexo-renderer-marked" target="_blank" rel="nofollow">hexo-renderer-marked</a>的基础上修改了一些bug，两者比较接近，也比较轻量级。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">uninstall</span> hexo-renderer-marked <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-kramed <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<p>执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。<br>然后，跟换引擎后行间公式可以正确渲染了，但是这样还没有完全解决问题，行内公式的渲染还是有问题，因为<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fsun11%2Fhexo-renderer-kramed" target="_blank" rel="nofollow">hexo-renderer-kramed</a>引擎也有语义冲突的问题。接下来到博客根目录下，找到node_modules\kramed\lib\rules\inline.js，把第11行的escape变量的值做相应的修改：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  escape: /^\\([<span class="string">\\`*&#123;&#125;\[\</span>](<span class="link"></span>)#$+\-.!_&amp;gt;])/,</span><br><span class="line">escape: /^\\([<span class="string">`*\[\</span>](<span class="link"></span>)#$+\-.!_&amp;gt;])/</span><br></pre></td></tr></table></figure>
-<p>这一步是在原基础上取消了对\,{,}的转义(escape)。<br><br>同时把第20行的em变量也要做相应的修改。</p>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  em: /^<span class="symbol">\b</span>_((?:__|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)_<span class="symbol">\b</span>|^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line">em: /^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/</span><br></pre></td></tr></table></figure>
-<p>重新启动hexo（先clean再generate）,问题完美解决。哦，如果不幸还没解决的话，看看是不是还需要在使用的主题中配置mathjax开关。</p>
-<h2 id="在主题中开启mathjax开关"><a href="#在主题中开启mathjax开关" class="headerlink" title="在主题中开启mathjax开关"></a>在主题中开启mathjax开关</h2><p>如何使用了主题了，别忘了在主题（Theme）中开启mathjax开关，下面以next主题为例，介绍下如何打开mathjax开关。<br>进入到主题目录，找到_config.yml配置问题，把mathjax默认的false修改为true，具体如下：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MathJax Support</span></span><br><span class="line"><span class="attr">mathjax:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<p>别着急，这样还不够，还需要在文章的Front-matter里打开mathjax开关，如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">index.html</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-12</span><span class="bullet">-28</span> <span class="number">21</span><span class="string">:01:30</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="bullet">-</span><span class="bullet">-</span></span><br></pre></td></tr></table></figure>
-<p>不要嫌麻烦，之所以要在文章头里设置开关，是因为考虑只有在用到公式的页面才加载 Mathjax，这样不需要渲染数学公式的页面的访问速度就不会受到影响了。<br>最后，试过好多网上写的各种配置，折腾了一天，这个是一次就成功的，在这里真心感谢作者！</p>
-
-          
+<p>执行上面的命令即可，先卸载原来的渲染引擎，再安装新的。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/11/hexo数学公式渲染/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1335,8 +1279,6 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
-      <div id="sidebar-dimmer"></div>
     
 
     <div class="sidebar-inner">
@@ -1451,6 +1393,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

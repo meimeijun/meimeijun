@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="python,numpy," />
+  <meta name="keywords" content="numpy,python," />
 
 
 
@@ -89,14 +89,14 @@
 
 
 <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。1.先做一个简单的数据12345678910from numpy import *#简单数据def dataset():    &apos;&apos;&apos;    定义一个简单数据集    :return: train 数据集，labels 对应的标签    &apos;&apos;&apos;">
-<meta name="keywords" content="python,numpy">
+<meta name="keywords" content="numpy,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k-近邻实现《机器学习实战》">
 <meta property="og:url" content="http://dword.top/2017/09/29/k-近邻/index.html">
 <meta property="og:site_name" content="山中小屋">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。1.先做一个简单的数据12345678910from numpy import *#简单数据def dataset():    &apos;&apos;&apos;    定义一个简单数据集    :return: train 数据集，labels 对应的标签    &apos;&apos;&apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-25T10:14:30.950Z">
+<meta property="og:updated_time" content="2018-06-25T17:24:29.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k-近邻实现《机器学习实战》">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;knn算法的实现原理是将测试数据集与样本数据集中数据对应的特征进行比较，提取k个特征最相似数据的分类标签。1.先做一个简单的数据12345678910from numpy import *#简单数据def dataset():    &apos;&apos;&apos;    定义一个简单数据集    :return: train 数据集，labels 对应的标签    &apos;&apos;&apos;">
@@ -109,7 +109,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -369,6 +369,7 @@
 <p>$\sqrt{(1-0)^{2}+(2-0)^{2}}$</p>
 <p>如果数据集存在4个特征值， 则点(1,0,0,1)与(7,6,9,4)之间的距离计算为:</p>
 <p>$\sqrt{(7-1)^{2}+(6-0)^{2}+(9-0)^{2}+(4-1)^{2}}$</p>
+<a id="more"></a>
 <p>计算完距离以后对数据进行从小到的排序</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Knn</span><span class="params">(inputdate, train, lablel , k)</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">    首先是要做欧式距离运算的，所以首先</span></span><br><span class="line"><span class="string">    1.是把输入的指矩阵进行复制可与测试的模型进行运算</span></span><br><span class="line"><span class="string">    2.排序以后取前k个相近的值进行分类</span></span><br><span class="line"><span class="string">    3.返回那个分类</span></span><br><span class="line"><span class="string">    :param inputdate: 测试数据</span></span><br><span class="line"><span class="string">    :param train: 样本数据</span></span><br><span class="line"><span class="string">    :param lablel: 样本数据标签</span></span><br><span class="line"><span class="string">    :param k: k值</span></span><br><span class="line"><span class="string">    :return: 最近标签</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    <span class="comment">#对输入数据做处理，跟样本数据一样的维度大小</span></span><br><span class="line">    inputdata = tile(inputdate,(train.shape[<span class="number">0</span>],<span class="number">1</span>))</span><br><span class="line">    <span class="comment">#对数据集做欧式距离运算</span></span><br><span class="line">    vla = (inputdata - train)**<span class="number">2</span></span><br><span class="line">    vlaue = (vla.sum(axis=<span class="number">1</span>))**<span class="number">0.05</span></span><br><span class="line">    <span class="comment">#返回从小到大的索引</span></span><br><span class="line">    sortval = vlaue.argsort()</span><br><span class="line">    dict = &#123;&#125;</span><br><span class="line">    <span class="comment">#取前k个值</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        <span class="comment">#保存成对应的键值对</span></span><br><span class="line">        dict[vlaue[sortval[i]]]=lablel[sortval[i]]</span><br><span class="line">    sortcalsscount = sorted(dict.items(), key=<span class="keyword">lambda</span> item: item[<span class="number">0</span>])</span><br><span class="line">    print(<span class="string">"排序以后的%"</span>,sortcalsscount)</span><br><span class="line">    <span class="keyword">return</span> sortcalsscount[<span class="number">0</span>][<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 <p>如果想用现有的数据集，对数据集进行特征抽取，下一篇有做介绍</p>
@@ -427,9 +428,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
-          
             <a href="/tags/numpy/" rel="tag"><i class="fa fa-tag"></i> numpy</a>
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           
         </div>
       
@@ -551,8 +552,6 @@
 
   <aside id="sidebar" class="sidebar">
     
-      <div id="sidebar-dimmer"></div>
-    
 
     <div class="sidebar-inner">
 
@@ -666,6 +665,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
