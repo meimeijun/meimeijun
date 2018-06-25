@@ -1987,7 +1987,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f79593;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3188,5 +3188,6 @@ code.description {
 @media (max-width: 767px) {
   .main-inner {
     margin: 0 auto;
+    width: 980;
   }
 }
