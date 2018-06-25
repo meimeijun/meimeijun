@@ -289,7 +289,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/10/01/函数笔记/" itemprop="url">
+            <a class="post-title-link" href="/2017/10/23/函数笔记/" itemprop="url">
               
                 <span itemprop="name">函数笔记</span>
               
@@ -299,9 +299,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-01T08:00:00+08:00"
-              content="2017-10-01" >
-          10-01
+              datetime="2017-10-23T00:00:00+08:00"
+              content="2017-10-23" >
+          10-23
         </time>
       </div>
 
@@ -586,6 +586,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'iwNCetUPAyqVKr2mU3Tv6Cu9-gzGzoHsz',
+        appKey: '8nekLq4WC7dOSvC8jK0gBiJ2',
+        placeholder: 'Just go go',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
