@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://dword.top/k-%E8%BF%91%E9%82%BB.html</loc>
+    <lastmod>2018-07-30T08:47:25.913Z</lastmod>
+    <data>
+        <display>
+        <title>k-近邻实现《机器学习实战》</title>
+        <pubTime>2017-09-28T16:00:00.000Z</pubTime>
+        
+        <tag>numpy</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://dword.top/%E6%A0%88%E7%BB%93%E6%9E%84.html</loc>
     <lastmod>2018-07-30T08:45:05.586Z</lastmod>
     <data>
@@ -201,28 +223,6 @@
            
              
               <breadCrumb title="随记" url="https://dword.top/categories/%E9%9A%8F%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/k-%E8%BF%91%E9%82%BB.html</loc>
-    <lastmod>2018-06-25T17:24:29.551Z</lastmod>
-    <data>
-        <display>
-        <title>k-近邻实现《机器学习实战》</title>
-        <pubTime>2017-09-28T16:00:00.000Z</pubTime>
-        
-        <tag>numpy</tag>
-         
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="pythn" url="https://dword.top/categories/pythn/"/>
           
         </display>
     </data>
