@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="numpy,matplotlib," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="山中小屋" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
+<meta name="keywords" content="numpy,matplotlib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数笔记">
+<meta property="og:url" content="http://dword.top/函数笔记.html">
+<meta property="og:site_name" content="山中小屋">
+<meta property="og:description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-25T17:24:40.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数笔记">
+<meta name="twitter:description" content="numpy中函数min()用法&amp;lt;求指定维度的最小值，默认求所有值的最小值&amp;gt;  min(): 无参，返回所有中的最小值    min(0):&amp;nbsp; 等价于 axis=0, 每列的最小值   min(1):&amp;nbsp;等价于 axis=1,每行的最小值   max()用法&amp;lt;求指定维度的最大值，默认求所有值的最大值&amp;gt;  max(): 无参，所有中的最大值 max(0):每列">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://dword.top/函数笔记.html"/>
+
+
+
+
+
+  <title>函数笔记 | 山中小屋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">山中小屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://dword.top/函数笔记.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="meimeijun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山中小屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">函数笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T00:00:00+08:00">
+                2017-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随记/" itemprop="url" rel="index">
+                    <span itemprop="name">随记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/函数笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="函数笔记.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="numpy中函数"><a href="#numpy中函数" class="headerlink" title="numpy中函数"></a>numpy中函数</h2><h3 id="min-用法"><a href="#min-用法" class="headerlink" title="min()用法"></a><font color="orange" size="3">min()用法</font><br></h3><p><font color="green" size="2">&lt;求指定维度的最小值，默认求所有值的最小值&gt;</font><br></p>
+<ul>
+<li><p>min(): 无参，返回所有中的最小值  </p>
+</li>
+<li><p>min(0):&nbsp; 等价于 axis=0, 每列的最小值 </p>
+</li>
+<li><p>min(1):&nbsp;等价于 axis=1,每行的最小值</p>
+</li>
+</ul>
+<h3 id="max-用法"><a href="#max-用法" class="headerlink" title="max()用法"></a><font color="orange" size="3"><strong>max()用法</strong></font><br></h3><p><font color="green" size="2">&lt;求指定维度的最大值，默认求所有值的最大值&gt;</font><br></p>
+<ul>
+<li>max(): 无参，所有中的最大值</li>
+<li>max(0):每列的最大值</li>
+<li>max(1):每行的最小值<a id="more"></a>
+<h3 id="sum-用法"><a href="#sum-用法" class="headerlink" title="sum()用法"></a><font color="orange" size="3"><strong>sum()用法</strong></font><br></h3><font color="green" size="2">&lt;求给定轴上的元素的和&gt;</font><br></li>
+<li>sum(axis=0): 求每列上的元素的和，返回一行</li>
+<li>sum(axis=1): 求每行上元素的和，返回一列</li>
+</ul>
+<h3 id="tile-用法"><a href="#tile-用法" class="headerlink" title="tile()用法"></a><font color="orange" size="3"><strong>tile()用法</strong></font><br></h3><p><font color="green" size="2">&lt;重复某个数组n次&gt;</font><br></p>
+<ul>
+<li>tile(a,2)==tile(a,(1,2)) 重复两次一行</li>
+<li>tile(a,(2,1) 生成一个二行一列数组</li>
+</ul>
+<h3 id="argsort-用法"><a href="#argsort-用法" class="headerlink" title="argsort()用法"></a><font color="orange" size="3"><strong>argsort()用法</strong></font><br></h3><p><font color="green" size="2">&lt;对矩阵进行排序，返回从小到大的索引矩阵&gt;</font><br><br><strong>二维矩阵</strong></p>
+<ul>
+<li>argsort(x,axis=0) 按列排序，返回所有索引矩阵</li>
+<li>argsort(x,axis=1) 按行排序，返回所有索引矩阵<br><strong>一维</strong></li>
+<li>argsort(x) 按列排序，返回所有从小到大索引矩阵</li>
+<li>argsort(-x) 按列排序，返回所有从大到小索引矩阵</li>
+</ul>
+<h3 id="shape-用法"><a href="#shape-用法" class="headerlink" title="shape()用法"></a><font color="orange" size="3"><strong>shape()用法</strong></font><br></h3><p><font color="green" size="2">&lt;返回指定维度的长度&gt;</font><br></p>
+<ul>
+<li>shape([1],[2]) 返回(2L,1L)</li>
+<li>shape(3) 返回()</li>
+<li>shape[0] 返回第一维度长度</li>
+</ul>
+<hr>
+<h2 id="matplotlib中函数"><a href="#matplotlib中函数" class="headerlink" title="matplotlib中函数"></a>matplotlib中函数</h2><h3 id="zeros-用法"><a href="#zeros-用法" class="headerlink" title="zeros()用法"></a><font color="orange" size="3"><strong>zeros()用法</strong></font><br></h3><p><font color="green" size="2">&lt;生成一个全为的0矩阵的函数&gt;</font><br></p>
+<ul>
+<li>zeros(m,n);生成一个m*n的零矩阵</li>
+<li>zeros(m);生成一个m*m的零矩阵</li>
+<li>zeros(m,n,k…);生成一个m <em> n </em> k …的零矩阵</li>
+<li>zeros(size \ shape(A));生成一个与矩阵A的维度一致的零矩阵</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p>版权声明:本文为博主原创，如若转载请标明出处<a href="/函数笔记.html" title="函数笔记">http://dword.top/函数笔记.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://dword.top/函数笔记.html"  aria-label="复制成功！"></i></span>
+  </p>
+  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+      
+	</div>
+    
+
+    
+
+    
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------end-------------</div>
+    
+</div>
+		
+	</div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/numpy/" rel="tag"><i class="fa fa-tag"></i> numpy</a>
+          
+            <a href="/tags/matplotlib/" rel="tag"><i class="fa fa-tag"></i> matplotlib</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+			
+              <a href="/排序.html" rel="prev" title="排序">
+                排序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+			  <a href="/k-近邻.html" rel="next" title="k-近邻实现《机器学习实战》">
+                <i class="fa fa-chevron-left"></i> k-近邻实现《机器学习实战》
+              
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar4.jpg"
+                alt="meimeijun" />
+            
+              <p class="site-author-name" itemprop="name">meimeijun</p>
+              <p class="site-description motion-element" itemprop="description">需求带动科技</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy中函数"><span class="nav-number">1.</span> <span class="nav-text">numpy中函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#min-用法"><span class="nav-number">1.1.</span> <span class="nav-text">min()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max-用法"><span class="nav-number">1.2.</span> <span class="nav-text">max()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum-用法"><span class="nav-number">1.3.</span> <span class="nav-text">sum()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tile-用法"><span class="nav-number">1.4.</span> <span class="nav-text">tile()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#argsort-用法"><span class="nav-number">1.5.</span> <span class="nav-text">argsort()用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shape-用法"><span class="nav-number">1.6.</span> <span class="nav-text">shape()用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matplotlib中函数"><span class="nav-number">2.</span> <span class="nav-text">matplotlib中函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zeros-用法"><span class="nav-number">2.1.</span> <span class="nav-text">zeros()用法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+	  
+
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://dword.top/函数笔记.html';
+          this.page.identifier = '函数笔记.html';
+          this.page.title = '函数笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'iwNCetUPAyqVKr2mU3Tv6Cu9-gzGzoHsz',
+        appKey: '8nekLq4WC7dOSvC8jK0gBiJ2',
+        placeholder: 'Just go go',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
