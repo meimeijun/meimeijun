@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://dword.top/"/>
+  <link href="https://dword.top/"/>
   <updated>2018-06-25T17:24:49.360Z</updated>
-  <id>http://dword.top/</id>
+  <id>https://dword.top/</id>
   
   <author>
     <name>meimeijun</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>解压文件(选自python绝技)</title>
-    <link href="http://dword.top/%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6-%E9%80%89%E8%87%AApython%E7%BB%9D%E6%8A%80.html"/>
-    <id>http://dword.top/解压文件-选自python绝技.html</id>
+    <link href="https://dword.top/%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6-%E9%80%89%E8%87%AApython%E7%BB%9D%E6%8A%80.html"/>
+    <id>https://dword.top/解压文件-选自python绝技.html</id>
     <published>2018-06-14T16:00:00.000Z</published>
     <updated>2018-06-25T17:24:49.360Z</updated>
     
@@ -40,19 +40,19 @@
     
     </summary>
     
-      <category term="python" scheme="http://dword.top/categories/python/"/>
+      <category term="python" scheme="https://dword.top/categories/python/"/>
     
     
-      <category term="python" scheme="http://dword.top/tags/python/"/>
+      <category term="python" scheme="https://dword.top/tags/python/"/>
     
-      <category term="zipfile" scheme="http://dword.top/tags/zipfile/"/>
+      <category term="zipfile" scheme="https://dword.top/tags/zipfile/"/>
     
   </entry>
   
   <entry>
     <title>英语连读</title>
-    <link href="http://dword.top/%E8%BF%9E%E8%AF%BB.html"/>
-    <id>http://dword.top/连读.html</id>
+    <link href="https://dword.top/%E8%BF%9E%E8%AF%BB.html"/>
+    <id>https://dword.top/连读.html</id>
     <published>2018-05-12T16:00:00.000Z</published>
     <updated>2018-06-25T17:25:13.127Z</updated>
     
@@ -71,17 +71,17 @@
     
     </summary>
     
-      <category term="英语" scheme="http://dword.top/categories/%E8%8B%B1%E8%AF%AD/"/>
+      <category term="英语" scheme="https://dword.top/categories/%E8%8B%B1%E8%AF%AD/"/>
     
     
-      <category term="英语" scheme="http://dword.top/tags/%E8%8B%B1%E8%AF%AD/"/>
+      <category term="英语" scheme="https://dword.top/tags/%E8%8B%B1%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title>排序</title>
-    <link href="http://dword.top/%E6%8E%92%E5%BA%8F.html"/>
-    <id>http://dword.top/排序.html</id>
+    <link href="https://dword.top/%E6%8E%92%E5%BA%8F.html"/>
+    <id>https://dword.top/排序.html</id>
     <published>2018-03-25T16:00:00.000Z</published>
     <updated>2018-07-30T05:00:40.513Z</updated>
     
@@ -96,17 +96,17 @@
     
     </summary>
     
-      <category term="c++" scheme="http://dword.top/categories/c/"/>
+      <category term="c++" scheme="https://dword.top/categories/c/"/>
     
     
-      <category term="-排序" scheme="http://dword.top/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="-排序" scheme="https://dword.top/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>函数笔记</title>
-    <link href="http://dword.top/%E5%87%BD%E6%95%B0%E7%AC%94%E8%AE%B0.html"/>
-    <id>http://dword.top/函数笔记.html</id>
+    <link href="https://dword.top/%E5%87%BD%E6%95%B0%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://dword.top/函数笔记.html</id>
     <published>2017-10-22T16:00:00.000Z</published>
     <updated>2018-06-25T17:24:40.835Z</updated>
     
@@ -131,19 +131,19 @@
     
     </summary>
     
-      <category term="随记" scheme="http://dword.top/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="https://dword.top/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="numpy" scheme="http://dword.top/tags/numpy/"/>
+      <category term="numpy" scheme="https://dword.top/tags/numpy/"/>
     
-      <category term="matplotlib" scheme="http://dword.top/tags/matplotlib/"/>
+      <category term="matplotlib" scheme="https://dword.top/tags/matplotlib/"/>
     
   </entry>
   
   <entry>
     <title>k-近邻实现《机器学习实战》</title>
-    <link href="http://dword.top/k-%E8%BF%91%E9%82%BB.html"/>
-    <id>http://dword.top/k-近邻.html</id>
+    <link href="https://dword.top/k-%E8%BF%91%E9%82%BB.html"/>
+    <id>https://dword.top/k-近邻.html</id>
     <published>2017-09-28T16:00:00.000Z</published>
     <updated>2018-06-25T17:24:29.551Z</updated>
     
@@ -161,19 +161,19 @@
     
     </summary>
     
-      <category term="pythn" scheme="http://dword.top/categories/pythn/"/>
+      <category term="pythn" scheme="https://dword.top/categories/pythn/"/>
     
     
-      <category term="numpy" scheme="http://dword.top/tags/numpy/"/>
+      <category term="numpy" scheme="https://dword.top/tags/numpy/"/>
     
-      <category term="python" scheme="http://dword.top/tags/python/"/>
+      <category term="python" scheme="https://dword.top/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>算法对比</title>
-    <link href="http://dword.top/%E7%AE%97%E6%B3%95%E5%AF%B9%E6%AF%94.html"/>
-    <id>http://dword.top/算法对比.html</id>
+    <link href="https://dword.top/%E7%AE%97%E6%B3%95%E5%AF%B9%E6%AF%94.html"/>
+    <id>https://dword.top/算法对比.html</id>
     <published>2017-09-27T16:00:00.000Z</published>
     <updated>2018-06-25T17:25:29.195Z</updated>
     
@@ -187,17 +187,17 @@
     
     </summary>
     
-      <category term="随记" scheme="http://dword.top/categories/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="https://dword.top/categories/%E9%9A%8F%E8%AE%B0/"/>
     
     
-      <category term="机器学习算法" scheme="http://dword.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/"/>
+      <category term="机器学习算法" scheme="https://dword.top/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>在Hexo中渲染MathJax数学公式</title>
-    <link href="http://dword.top/hexo%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93.html"/>
-    <id>http://dword.top/hexo数学公式渲染.html</id>
+    <link href="https://dword.top/hexo%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93.html"/>
+    <id>https://dword.top/hexo数学公式渲染.html</id>
     <published>2017-08-10T16:00:00.000Z</published>
     <updated>2018-06-25T17:23:50.105Z</updated>
     
@@ -213,14 +213,14 @@
     
     </summary>
     
-      <category term="hexo" scheme="http://dword.top/categories/hexo/"/>
+      <category term="hexo" scheme="https://dword.top/categories/hexo/"/>
     
     
-      <category term="hexo" scheme="http://dword.top/tags/hexo/"/>
+      <category term="hexo" scheme="https://dword.top/tags/hexo/"/>
     
-      <category term="MathJax" scheme="http://dword.top/tags/MathJax/"/>
+      <category term="MathJax" scheme="https://dword.top/tags/MathJax/"/>
     
-      <category term="Latex" scheme="http://dword.top/tags/Latex/"/>
+      <category term="Latex" scheme="https://dword.top/tags/Latex/"/>
     
   </entry>
   
