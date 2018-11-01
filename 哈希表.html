@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="山中小屋">
 <meta property="og:description" content="在查找大数据方面，map要优于数组，对于数组说来就是依次下标遍历了，直到找到这个数据为止，map理想情况下只需要0(1)的时间级，其查找的时间复杂度与元素的数量多少无关。那么map到底用了什么办法达到了这么快的查找速度。 map的组成简单来说，map的组成是有一个哈希表（也叫散列表）,是根据关键码值（key value)而直接进行访问的数据结构，也就是通过关键码值映射到表中一个位置来访问记录，以加">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-12T06:56:17.230Z">
+<meta property="og:updated_time" content="2018-11-01T08:40:56.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈字典查询速度快的原因">
 <meta name="twitter:description" content="在查找大数据方面，map要优于数组，对于数组说来就是依次下标遍历了，直到找到这个数据为止，map理想情况下只需要0(1)的时间级，其查找的时间复杂度与元素的数量多少无关。那么map到底用了什么办法达到了这么快的查找速度。 map的组成简单来说，map的组成是有一个哈希表（也叫散列表）,是根据关键码值（key value)而直接进行访问的数据结构，也就是通过关键码值映射到表中一个位置来访问记录，以加">
@@ -371,7 +371,7 @@
 <h4 id="关系大概如下"><a href="#关系大概如下" class="headerlink" title="关系大概如下"></a>关系大概如下</h4><p>记录存储的位置 = 哈希函数(key)  </p>
 <h4 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h4><p>哈希函数到底是怎么映射这种关系的呢，哈希算法有很多种，用哪种算法，没有完美的算法，简单来说，使用一套算法，将所有的健转化为一个数组的索引，值为其对应的值，这样就可以通过f(key)找到数组的下标一次查找到对应的值，达到快速查找的目的。<br><br>举个最简单的例子，当然这里没有任何算法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#比如一个一组key是[3,5,4,7]，在数组中的形式如下</span></span><br><span class="line">    <span class="number">0</span>           </span><br><span class="line">    <span class="number">1</span></span><br><span class="line">    <span class="number">2</span></span><br><span class="line">    <span class="number">3</span>           值</span><br><span class="line">    <span class="number">4</span>           值</span><br><span class="line">    <span class="number">5</span>           值</span><br><span class="line">    <span class="number">6</span></span><br><span class="line">    <span class="number">7</span>           值</span><br></pre></td></tr></table></figure></p>
 <p>这样做虽然在一定程度上浪费了空间，但是在这个大内存时代，用合理的空间换取时间是能承受的，而这种通过f(key)查找值的方法，也决定了key-value在形式上无序的，跟插入的顺序无关，跟key在哈希表中的f(key)顺序有关。<br></p>
-<p>当然肯定会引申出几个问题，比如数值超过可以能计算的范围，怎么哈希计算，又比如理想的情况下哈希值是均匀分布，但是不一定所有被哈希的值一定是不一样，可能得到相同的哈希值对应多个值，这种情况也叫哈希冲突，这种冲突肯定是不能避免的，遇到哈希冲突又该怎么样，这个数组的长度又应该如何确定，如果长度太小，空间很容易满造成冲突，太长又浪费空间等等，下面将对此做简单的介绍。<br></p>
+<p>当然肯定会引申出几个问题，比如数值超过可以能计算的范围，怎么哈希计算，又比如理想的情况下哈希值是均匀分布，但是不一定所有被哈希的值一定是不一样，可能得到相同的哈希值对应多个值，这种情况也叫哈希冲突，这种冲突肯定是不能避免的，遇到哈希冲突又该怎么样，这个数组的长度又应该如何确定，如果长度太小，空间很容易满造成冲突，太长又浪费空间等等，下面将对此做简单的介绍。<br><br><a id="more"></a></p>
 <h4 id="常用的哈希算法"><a href="#常用的哈希算法" class="headerlink" title="常用的哈希算法"></a>常用的哈希算法</h4><p>实际工作中徐视不同的情况采用不同的哈希函数，通常考虑的的因素有：  </p>
 <ul>
 <li>计算哈希函数所需时间</li>
