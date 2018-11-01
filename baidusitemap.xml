@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://dword.top/git%E6%9C%AC%E5%9C%B0%E8%BF%9C%E7%A8%8B%E5%BA%93.html</loc>
+    <lastmod>2018-11-01T08:34:21.257Z</lastmod>
+    <data>
+        <display>
+        <title>git远程库</title>
+        <pubTime>2018-10-31T16:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="https://dword.top/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/git%E6%A0%87%E7%AD%BE.html</loc>
+    <lastmod>2018-11-01T08:34:05.014Z</lastmod>
+    <data>
+        <display>
+        <title>git标签</title>
+        <pubTime>2018-10-31T16:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="https://dword.top/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/git%E5%88%86%E6%94%AF.html</loc>
+    <lastmod>2018-11-01T08:33:02.712Z</lastmod>
+    <data>
+        <display>
+        <title>git分支</title>
+        <pubTime>2018-10-31T16:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="https://dword.top/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://dword.top/%E5%93%88%E5%B8%8C%E8%A1%A8.html</loc>
     <lastmod>2018-09-12T06:56:17.230Z</lastmod>
     <data>
@@ -151,9 +211,9 @@
         <title>k-近邻实现《机器学习实战》</title>
         <pubTime>2017-09-28T16:00:00.000Z</pubTime>
         
-        <tag>numpy</tag>
-         
         <tag>python</tag>
+         
+        <tag>numpy</tag>
          
          
            
