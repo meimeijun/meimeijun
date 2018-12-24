@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://dword.top/Selenium+PhantomJS.html</loc>
+    <lastmod>2018-12-24T02:35:07.356Z</lastmod>
+    <data>
+        <display>
+        <title>Selenium+PhantomJS</title>
+        <pubTime>2017-10-11T16:00:00.000Z</pubTime>
+        
+        <tag>Selenium+PhantomJS</tag>
+         
+         
+           
+             
+              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/requests.html</loc>
+    <lastmod>2018-12-24T02:34:58.258Z</lastmod>
+    <data>
+        <display>
+        <title>requests</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+        <tag>requests</tag>
+         
+         
+           
+             
+              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95.html</loc>
+    <lastmod>2018-12-24T02:34:37.728Z</lastmod>
+    <data>
+        <display>
+        <title>常见排序算法</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+        <tag>常见排序</tag>
+         
+         
+           
+             
+              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://dword.top/tcp.html</loc>
     <lastmod>2018-12-24T02:33:23.867Z</lastmod>
     <data>
@@ -52,46 +112,6 @@
         <pubTime>2017-12-11T16:00:00.000Z</pubTime>
         
         <tag>网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/Selenium+PhantomJS.html</loc>
-    <lastmod>2018-12-24T02:30:01.142Z</lastmod>
-    <data>
-        <display>
-        <title>Selenium+PhantomJS</title>
-        <pubTime>2017-10-11T16:00:00.000Z</pubTime>
-        
-        <tag>-Selenium+PhantomJS</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/requests.html</loc>
-    <lastmod>2018-12-24T02:29:54.252Z</lastmod>
-    <data>
-        <display>
-        <title>requests</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-        <tag>-requests</tag>
          
          
            
@@ -159,26 +179,6 @@
            
              
               <breadCrumb title="-http" url="https://dword.top/categories/http/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95.html</loc>
-    <lastmod>2018-12-24T02:26:06.382Z</lastmod>
-    <data>
-        <display>
-        <title>常见排序算法</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-        <tag>-常见排序</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
           
         </display>
     </data>
