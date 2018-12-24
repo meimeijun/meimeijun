@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://dword.top/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.html</loc>
+    <lastmod>2018-12-24T02:42:40.619Z</lastmod>
+    <data>
+        <display>
+        <title>建立连接</title>
+        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
+        
+        <tag>网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://dword.top/requests.html</loc>
     <lastmod>2018-12-24T02:40:40.350Z</lastmod>
     <data>
@@ -159,26 +179,6 @@
            
              
               <breadCrumb title="http" url="https://dword.top/categories/http/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.html</loc>
-    <lastmod>2018-12-24T02:36:37.068Z</lastmod>
-    <data>
-        <display>
-        <title>建立连接</title>
-        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
-        
-        <tag>网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
           
         </display>
     </data>
