@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="PRuDmSA1Ijfnjy2m1SMUS7ZwL3XdZD8tIRTsce_AD90" />
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="mnpsnHmCST" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-response.status," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="山中小屋" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1xx:信息100 Continue服务器仅接收到部分请求，但是一旦服务器并没有拒绝该请求，客户端应该继续发送其余的请求。   101 Switching Protocols服务器转换协议：服务器将遵从客户的请求转换到另外一种协议。  2xx:成功200 OK请求成功（其后是对GET和POST请求的应答文档 ）   201 Created请求被创建完成，同时新的资源被创建。  202 Accept">
+<meta name="keywords" content="-response.status">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应码">
+<meta property="og:url" content="https://dword.top/状态码.html">
+<meta property="og:site_name" content="山中小屋">
+<meta property="og:description" content="1xx:信息100 Continue服务器仅接收到部分请求，但是一旦服务器并没有拒绝该请求，客户端应该继续发送其余的请求。   101 Switching Protocols服务器转换协议：服务器将遵从客户的请求转换到另外一种协议。  2xx:成功200 OK请求成功（其后是对GET和POST请求的应答文档 ）   201 Created请求被创建完成，同时新的资源被创建。  202 Accept">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-24T02:28:02.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应码">
+<meta name="twitter:description" content="1xx:信息100 Continue服务器仅接收到部分请求，但是一旦服务器并没有拒绝该请求，客户端应该继续发送其余的请求。   101 Switching Protocols服务器转换协议：服务器将遵从客户的请求转换到另外一种协议。  2xx:成功200 OK请求成功（其后是对GET和POST请求的应答文档 ）   201 Created请求被创建完成，同时新的资源被创建。  202 Accept">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dword.top/状态码.html"/>
+
+
+
+
+
+  <title>响应码 | 山中小屋</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">山中小屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dword.top/状态码.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="meimeijun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar4.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山中小屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">响应码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-11T00:00:00+08:00">
+                2017-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">-http</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/状态码.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="状态码.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1xx-信息"><a href="#1xx-信息" class="headerlink" title="1xx:信息"></a>1xx:信息</h4><h5 id="100-Continue"><a href="#100-Continue" class="headerlink" title="100 Continue"></a>100 Continue</h5><p>服务器仅接收到部分请求，但是一旦服务器并没有拒绝该请求，客户端应该继续发送其余的请求。<br>  </p>
+<h5 id="101-Switching-Protocols"><a href="#101-Switching-Protocols" class="headerlink" title="101 Switching Protocols"></a>101 Switching Protocols</h5><p>服务器转换协议：服务器将遵从客户的请求转换到另外一种协议。<br> </p>
+<h4 id="2xx-成功"><a href="#2xx-成功" class="headerlink" title="2xx:成功"></a>2xx:成功</h4><h5 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h5><p>请求成功（其后是对GET和POST请求的应答文档<br> ）  </p>
+<h5 id="201-Created"><a href="#201-Created" class="headerlink" title="201 Created"></a>201 Created</h5><p>请求被创建完成，同时新的资源被创建。<br> </p>
+<h5 id="202-Accepted"><a href="#202-Accepted" class="headerlink" title="202 Accepted"></a>202 Accepted</h5><p>供处理的请求已被接受，但是处理未完成。<br> </p>
+<h5 id="203-Non-authoritative-Information"><a href="#203-Non-authoritative-Information" class="headerlink" title="203 Non-authoritative Information"></a>203 Non-authoritative Information</h5><p>文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝。<br> <a id="more"></a></p>
+<h5 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h5><p>没有新文档。浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。<br> </p>
+<h5 id="205-Reset-Content"><a href="#205-Reset-Content" class="headerlink" title="205 Reset Content"></a>205 Reset Content</h5><p>没有新文档。但浏览器应该重置它所显示的内容。用来强制浏览器清除表单输入内容。<br> </p>
+<h5 id="206-Partial-Content"><a href="#206-Partial-Content" class="headerlink" title="206 Partial Content"></a>206 Partial Content</h5><p>客户发送了一个带有Range头的GET请求，服务器完成了它。<br> </p>
+<h4 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx:重定向"></a>3xx:重定向</h4><h5 id="300-Multiple-Choices"><a href="#300-Multiple-Choices" class="headerlink" title="300 Multiple Choices"></a>300 Multiple Choices</h5><p>多重选择。链接列表。用户可以选择某链接到达目的地。最多允许五个地址。<br> </p>
+<h5 id="301-Moved-Permanently"><a href="#301-Moved-Permanently" class="headerlink" title="301 Moved Permanently"></a>301 Moved Permanently</h5><p>所请求的页面已经转移至新的url。<br> </p>
+<h5 id="302-Moved-Temporarily"><a href="#302-Moved-Temporarily" class="headerlink" title="302 Moved Temporarily"></a>302 Moved Temporarily</h5><p>所请求的页面已经临时转移至新的url。<br> </p>
+<h5 id="303-See-Other"><a href="#303-See-Other" class="headerlink" title="303 See Other"></a>303 See Other</h5><p>所请求的页面可在别的url下被找到。<br> </p>
+<h5 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h5><p>未按预期修改文档。客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。<br> </p>
+<h5 id="305-Use-Proxy"><a href="#305-Use-Proxy" class="headerlink" title="305 Use Proxy"></a>305 Use Proxy</h5><p>客户请求的文档应该通过Location头所指明的代理服务器提取。<br> </p>
+<h5 id="306-Unused"><a href="#306-Unused" class="headerlink" title="306 Unused"></a>306 Unused</h5><p>此代码被用于前一版本。目前已不再使用，但是代码依然被保留。<br> </p>
+<h5 id="307-Temporary-Redirect"><a href="#307-Temporary-Redirect" class="headerlink" title="307 Temporary Redirect"></a>307 Temporary Redirect</h5><p>被请求的页面已经临时移至新的url。<br> </p>
+<h4 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx:客户端错误"></a>4xx:客户端错误</h4><h5 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h5><p>服务器未能理解请求。<br> </p>
+<h5 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h5><p>被请求的页面需要用户名和密码。<br> </p>
+<h5 id="401-1"><a href="#401-1" class="headerlink" title="401.1"></a>401.1</h5><p>登录失败。<br> </p>
+<h5 id="401-2"><a href="#401-2" class="headerlink" title="401.2"></a>401.2</h5><p>服务器配置导致登录失败。<br> </p>
+<h5 id="401-3"><a href="#401-3" class="headerlink" title="401.3"></a>401.3</h5><p>由于 ACL 对资源的限制而未获得授权。<br> </p>
+<h5 id="401-4"><a href="#401-4" class="headerlink" title="401.4"></a>401.4</h5><p>筛选器授权失败。<br> </p>
+<h5 id="401-5"><a href="#401-5" class="headerlink" title="401.5"></a>401.5</h5><p>ISAPI/CGI 应用程序授权失败。<br> </p>
+<h5 id="401-7"><a href="#401-7" class="headerlink" title="401.7"></a>401.7</h5><p>访问被 Web 服务器上的 URL 授权策略拒绝。这个错误代码为 IIS 6.0 所专用。<br> </p>
+<h5 id="402-Payment-Required"><a href="#402-Payment-Required" class="headerlink" title="402 Payment Required"></a>402 Payment Required</h5><p>此代码尚无法使用。<br> </p>
+<h5 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h5><p>对被请求页面的访问被禁止。<br> </p>
+<h5 id="403-1"><a href="#403-1" class="headerlink" title="403.1"></a>403.1</h5><p>执行访问被禁止。<br> </p>
+<h5 id="403-2"><a href="#403-2" class="headerlink" title="403.2"></a>403.2</h5><p>读访问被禁止。<br> </p>
+<h5 id="403-3"><a href="#403-3" class="headerlink" title="403.3"></a>403.3</h5><p>写访问被禁止。<br> </p>
+<h5 id="403-4"><a href="#403-4" class="headerlink" title="403.4"></a>403.4</h5><p>要求 SSL。<br> </p>
+<h5 id="403-5"><a href="#403-5" class="headerlink" title="403.5"></a>403.5</h5><p>要求 SSL 128。<br> </p>
+<h5 id="403-6"><a href="#403-6" class="headerlink" title="403.6"></a>403.6</h5><p>IP 地址被拒绝。<br> </p>
+<h5 id="403-7"><a href="#403-7" class="headerlink" title="403.7"></a>403.7</h5><p>要求客户端证书。<br> </p>
+<h5 id="403-8"><a href="#403-8" class="headerlink" title="403.8"></a>403.8</h5><p>站点访问被拒绝。<br> </p>
+<h5 id="403-9"><a href="#403-9" class="headerlink" title="403.9"></a>403.9</h5><p>用户数过多。<br> </p>
+<h5 id="403-10"><a href="#403-10" class="headerlink" title="403.10"></a>403.10</h5><p>配置无效。<br> </p>
+<h5 id="403-11"><a href="#403-11" class="headerlink" title="403.11"></a>403.11</h5><p>密码更改。<br> </p>
+<h5 id="403-12"><a href="#403-12" class="headerlink" title="403.12"></a>403.12</h5><p>拒绝访问映射表。<br> </p>
+<h5 id="403-13"><a href="#403-13" class="headerlink" title="403.13"></a>403.13</h5><p>客户端证书被吊销。<br> </p>
+<h5 id="403-14"><a href="#403-14" class="headerlink" title="403.14"></a>403.14</h5><p>拒绝目录列表。<br> </p>
+<h5 id="403-15"><a href="#403-15" class="headerlink" title="403.15"></a>403.15</h5><p>超出客户端访问许可。<br> </p>
+<h5 id="403-16"><a href="#403-16" class="headerlink" title="403.16"></a>403.16</h5><p>客户端证书不受信任或无效。<br> </p>
+<h5 id="403-17"><a href="#403-17" class="headerlink" title="403.17"></a>403.17</h5><p>客户端证书已过期或尚未生效。<br> </p>
+<h5 id="403-18"><a href="#403-18" class="headerlink" title="403.18"></a>403.18</h5><p>在当前的应用程序池中不能执行所请求的 URL。这个错误代码为 IIS 6.0 所专用。<br> </p>
+<h5 id="403-19"><a href="#403-19" class="headerlink" title="403.19"></a>403.19</h5><p>不能为这个应用程序池中的客户端执行 CGI。这个错误代码为 IIS 6.0 所专用。<br> </p>
+<h5 id="403-20"><a href="#403-20" class="headerlink" title="403.20"></a>403.20</h5><p>Passport 登录失败。这个错误代码为 IIS 6.0 所专用。<br> </p>
+<h5 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h5><p>服务器无法找到被请求的页面。<br> </p>
+<h5 id="404-0"><a href="#404-0" class="headerlink" title="404.0"></a>404.0</h5><p>没有找到文件或目录。<br> </p>
+<h5 id="404-1"><a href="#404-1" class="headerlink" title="404.1"></a>404.1</h5><p>无法在所请求的端口上访问 Web 站点。<br> </p>
+<h5 id="404-2"><a href="#404-2" class="headerlink" title="404.2"></a>404.2</h5><p>Web 服务扩展锁定策略阻止本请求。<br> </p>
+<h5 id="404-3"><a href="#404-3" class="headerlink" title="404.3"></a>404.3</h5><p>MIME 映射策略阻止本请求。<br> </p>
+<h5 id="405-Method-Not-Allowed"><a href="#405-Method-Not-Allowed" class="headerlink" title="405 Method Not Allowed"></a>405 Method Not Allowed</h5><p>请求中指定的方法不被允许。<br> </p>
+<h5 id="406-Not-Acceptable"><a href="#406-Not-Acceptable" class="headerlink" title="406 Not Acceptable"></a>406 Not Acceptable</h5><p>服务器生成的响应无法被客户端所接受。<br> </p>
+<h5 id="407-Proxy-Authentication-Required"><a href="#407-Proxy-Authentication-Required" class="headerlink" title="407 Proxy Authentication Required"></a>407 Proxy Authentication Required</h5><p>用户必须首先使用代理服务器进行验证，这样请求才会被处理。<br> </p>
+<h5 id="408-Request-Timeout"><a href="#408-Request-Timeout" class="headerlink" title="408 Request Timeout"></a>408 Request Timeout</h5><p>请求超出了服务器的等待时间。<br> </p>
+<h5 id="409-Conflict"><a href="#409-Conflict" class="headerlink" title="409 Conflict"></a>409 Conflict</h5><p>由于冲突，请求无法被完成。<br> </p>
+<h5 id="410-Gone"><a href="#410-Gone" class="headerlink" title="410 Gone"></a>410 Gone</h5><p>被请求的页面不可用。<br> </p>
+<h5 id="411-Length-Required"><a href="#411-Length-Required" class="headerlink" title="411 Length Required"></a>411 Length Required</h5><p>“Content-Length” 未被定义。如果无此内容，服务器不会接受请求。<br> </p>
+<h5 id="412-Precondition-Failed"><a href="#412-Precondition-Failed" class="headerlink" title="412 Precondition Failed"></a>412 Precondition Failed</h5><p>请求中的前提条件被服务器评估为失败。<br> </p>
+<h5 id="413-Request-Entity-Too-Large"><a href="#413-Request-Entity-Too-Large" class="headerlink" title="413 Request Entity Too Large"></a>413 Request Entity Too Large</h5><p>由于所请求的实体的太大，服务器不会接受请求。<br> </p>
+<h5 id="414-Request-url-Too-Long"><a href="#414-Request-url-Too-Long" class="headerlink" title="414 Request-url Too Long"></a>414 Request-url Too Long</h5><p>由于url太长，服务器不会接受请求。当post请求被转换为带有很长的查询信息的get请求时，就会发生这种情况。<br> </p>
+<h5 id="415-Unsupported-Media-Type"><a href="#415-Unsupported-Media-Type" class="headerlink" title="415 Unsupported Media Type"></a>415 Unsupported Media Type</h5><p>由于媒介类型不被支持，服务器不会接受请求。<br> </p>
+<h5 id="416-Requested-Range-Not-Satisfiable"><a href="#416-Requested-Range-Not-Satisfiable" class="headerlink" title="416 Requested Range Not Satisfiable"></a>416 Requested Range Not Satisfiable</h5><p>服务器不能满足客户在请求中指定的Range头。<br> </p>
+<h5 id="417-Expectation-Failed"><a href="#417-Expectation-Failed" class="headerlink" title="417 Expectation Failed"></a>417 Expectation Failed</h5><p>执行失败。<br> </p>
+<h5 id="423"><a href="#423" class="headerlink" title="423"></a>423</h5><p>锁定的错误。<br> </p>
+<h4 id="5xx-服务器错误"><a href="#5xx-服务器错误" class="headerlink" title="5xx:服务器错误"></a>5xx:服务器错误</h4><h5 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h5><p>请求未完成。服务器遇到不可预知的情况。<br> </p>
+<h5 id="500-12"><a href="#500-12" class="headerlink" title="500.12"></a>500.12</h5><p>应用程序正忙于在 Web 服务器上重新启动。<br> </p>
+<h5 id="500-13"><a href="#500-13" class="headerlink" title="500.13"></a>500.13</h5><p>Web 服务器太忙。<br> </p>
+<h5 id="500-15"><a href="#500-15" class="headerlink" title="500.15"></a>500.15</h5><p>不允许直接请求 Global.asa。<br> </p>
+<h5 id="500-16"><a href="#500-16" class="headerlink" title="500.16"></a>500.16</h5><p>UNC 授权凭据不正确。这个错误代码为 IIS 6.0 所专用。<br> </p>
+<h5 id="500-18"><a href="#500-18" class="headerlink" title="500.18"></a>500.18</h5><p>URL 授权存储不能打开。这个错误代码为 IIS 6.0 所专用。<br> </p>
+<h5 id="500-100"><a href="#500-100" class="headerlink" title="500.100"></a>500.100</h5><p>内部 ASP 错误。<br> </p>
+<h5 id="501-Not-Implemented"><a href="#501-Not-Implemented" class="headerlink" title="501 Not Implemented"></a>501 Not Implemented</h5><p>请求未完成。服务器不支持所请求的功能。<br> </p>
+<h5 id="502-Bad-Gateway"><a href="#502-Bad-Gateway" class="headerlink" title="502 Bad Gateway"></a>502 Bad Gateway</h5><p>请求未完成。服务器从上游服务器收到一个无效的响应。<br> </p>
+<h5 id="502-1"><a href="#502-1" class="headerlink" title="502.1"></a>502.1</h5><p>CGI 应用程序超时。　·<br> </p>
+<h5 id="502-2"><a href="#502-2" class="headerlink" title="502.2"></a>502.2</h5><p>CGI 应用程序出错。<br> </p>
+<h5 id="503-Service-Unavailable"><a href="#503-Service-Unavailable" class="headerlink" title="503 Service Unavailable"></a>503 Service Unavailable</h5><p>请求未完成。服务器临时过载或当机。<br> </p>
+<h5 id="504-Gateway-Timeout"><a href="#504-Gateway-Timeout" class="headerlink" title="504 Gateway Timeout"></a>504 Gateway Timeout</h5><p>网关超时。<br> </p>
+<h5 id="505-HTTP-Version-Not-Supported"><a href="#505-HTTP-Version-Not-Supported" class="headerlink" title="505 HTTP Version Not Supported"></a>505 HTTP Version Not Supported<br></h5>
+      
+    </div>
+    
+    
+    
+	<div>
+      
+        
+
+      
+	</div>
+    
+
+    
+
+    
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------end-------------</div>
+    
+</div>
+		
+	</div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/response-status/" rel="tag"><i class="fa fa-tag"></i> -response.status</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+			
+              <a href="/常用算法.html" rel="prev" title="常见排序算法">
+                常见排序算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+			  <a href="/k-近邻.html" rel="next" title="k-近邻实现《机器学习实战》">
+                <i class="fa fa-chevron-left"></i> k-近邻实现《机器学习实战》
+              
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar4.jpg"
+                alt="meimeijun" />
+            
+              <p class="site-author-name" itemprop="name">meimeijun</p>
+              <p class="site-description motion-element" itemprop="description">需求带动科技</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1xx-信息"><span class="nav-number">1.</span> <span class="nav-text">1xx:信息</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#100-Continue"><span class="nav-number">1.1.</span> <span class="nav-text">100 Continue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#101-Switching-Protocols"><span class="nav-number">1.2.</span> <span class="nav-text">101 Switching Protocols</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2xx-成功"><span class="nav-number">2.</span> <span class="nav-text">2xx:成功</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#200-OK"><span class="nav-number">2.1.</span> <span class="nav-text">200 OK</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#201-Created"><span class="nav-number">2.2.</span> <span class="nav-text">201 Created</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#202-Accepted"><span class="nav-number">2.3.</span> <span class="nav-text">202 Accepted</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#203-Non-authoritative-Information"><span class="nav-number">2.4.</span> <span class="nav-text">203 Non-authoritative Information</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#204-No-Content"><span class="nav-number">2.5.</span> <span class="nav-text">204 No Content</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#205-Reset-Content"><span class="nav-number">2.6.</span> <span class="nav-text">205 Reset Content</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#206-Partial-Content"><span class="nav-number">2.7.</span> <span class="nav-text">206 Partial Content</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3xx-重定向"><span class="nav-number">3.</span> <span class="nav-text">3xx:重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#300-Multiple-Choices"><span class="nav-number">3.1.</span> <span class="nav-text">300 Multiple Choices</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#301-Moved-Permanently"><span class="nav-number">3.2.</span> <span class="nav-text">301 Moved Permanently</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#302-Moved-Temporarily"><span class="nav-number">3.3.</span> <span class="nav-text">302 Moved Temporarily</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#303-See-Other"><span class="nav-number">3.4.</span> <span class="nav-text">303 See Other</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#304-Not-Modified"><span class="nav-number">3.5.</span> <span class="nav-text">304 Not Modified</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#305-Use-Proxy"><span class="nav-number">3.6.</span> <span class="nav-text">305 Use Proxy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#306-Unused"><span class="nav-number">3.7.</span> <span class="nav-text">306 Unused</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#307-Temporary-Redirect"><span class="nav-number">3.8.</span> <span class="nav-text">307 Temporary Redirect</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4xx-客户端错误"><span class="nav-number">4.</span> <span class="nav-text">4xx:客户端错误</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#400-Bad-Request"><span class="nav-number">4.1.</span> <span class="nav-text">400 Bad Request</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-Unauthorized"><span class="nav-number">4.2.</span> <span class="nav-text">401 Unauthorized</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-1"><span class="nav-number">4.3.</span> <span class="nav-text">401.1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-2"><span class="nav-number">4.4.</span> <span class="nav-text">401.2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-3"><span class="nav-number">4.5.</span> <span class="nav-text">401.3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-4"><span class="nav-number">4.6.</span> <span class="nav-text">401.4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-5"><span class="nav-number">4.7.</span> <span class="nav-text">401.5</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#401-7"><span class="nav-number">4.8.</span> <span class="nav-text">401.7</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#402-Payment-Required"><span class="nav-number">4.9.</span> <span class="nav-text">402 Payment Required</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-Forbidden"><span class="nav-number">4.10.</span> <span class="nav-text">403 Forbidden</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-1"><span class="nav-number">4.11.</span> <span class="nav-text">403.1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-2"><span class="nav-number">4.12.</span> <span class="nav-text">403.2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-3"><span class="nav-number">4.13.</span> <span class="nav-text">403.3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-4"><span class="nav-number">4.14.</span> <span class="nav-text">403.4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-5"><span class="nav-number">4.15.</span> <span class="nav-text">403.5</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-6"><span class="nav-number">4.16.</span> <span class="nav-text">403.6</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-7"><span class="nav-number">4.17.</span> <span class="nav-text">403.7</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-8"><span class="nav-number">4.18.</span> <span class="nav-text">403.8</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-9"><span class="nav-number">4.19.</span> <span class="nav-text">403.9</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-10"><span class="nav-number">4.20.</span> <span class="nav-text">403.10</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-11"><span class="nav-number">4.21.</span> <span class="nav-text">403.11</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-12"><span class="nav-number">4.22.</span> <span class="nav-text">403.12</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-13"><span class="nav-number">4.23.</span> <span class="nav-text">403.13</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-14"><span class="nav-number">4.24.</span> <span class="nav-text">403.14</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-15"><span class="nav-number">4.25.</span> <span class="nav-text">403.15</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-16"><span class="nav-number">4.26.</span> <span class="nav-text">403.16</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-17"><span class="nav-number">4.27.</span> <span class="nav-text">403.17</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-18"><span class="nav-number">4.28.</span> <span class="nav-text">403.18</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-19"><span class="nav-number">4.29.</span> <span class="nav-text">403.19</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#403-20"><span class="nav-number">4.30.</span> <span class="nav-text">403.20</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#404-Not-Found"><span class="nav-number">4.31.</span> <span class="nav-text">404 Not Found</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#404-0"><span class="nav-number">4.32.</span> <span class="nav-text">404.0</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#404-1"><span class="nav-number">4.33.</span> <span class="nav-text">404.1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#404-2"><span class="nav-number">4.34.</span> <span class="nav-text">404.2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#404-3"><span class="nav-number">4.35.</span> <span class="nav-text">404.3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#405-Method-Not-Allowed"><span class="nav-number">4.36.</span> <span class="nav-text">405 Method Not Allowed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#406-Not-Acceptable"><span class="nav-number">4.37.</span> <span class="nav-text">406 Not Acceptable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#407-Proxy-Authentication-Required"><span class="nav-number">4.38.</span> <span class="nav-text">407 Proxy Authentication Required</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#408-Request-Timeout"><span class="nav-number">4.39.</span> <span class="nav-text">408 Request Timeout</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#409-Conflict"><span class="nav-number">4.40.</span> <span class="nav-text">409 Conflict</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#410-Gone"><span class="nav-number">4.41.</span> <span class="nav-text">410 Gone</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#411-Length-Required"><span class="nav-number">4.42.</span> <span class="nav-text">411 Length Required</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#412-Precondition-Failed"><span class="nav-number">4.43.</span> <span class="nav-text">412 Precondition Failed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#413-Request-Entity-Too-Large"><span class="nav-number">4.44.</span> <span class="nav-text">413 Request Entity Too Large</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#414-Request-url-Too-Long"><span class="nav-number">4.45.</span> <span class="nav-text">414 Request-url Too Long</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#415-Unsupported-Media-Type"><span class="nav-number">4.46.</span> <span class="nav-text">415 Unsupported Media Type</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#416-Requested-Range-Not-Satisfiable"><span class="nav-number">4.47.</span> <span class="nav-text">416 Requested Range Not Satisfiable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#417-Expectation-Failed"><span class="nav-number">4.48.</span> <span class="nav-text">417 Expectation Failed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#423"><span class="nav-number">4.49.</span> <span class="nav-text">423</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5xx-服务器错误"><span class="nav-number">5.</span> <span class="nav-text">5xx:服务器错误</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#500-Internal-Server-Error"><span class="nav-number">5.1.</span> <span class="nav-text">500 Internal Server Error</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#500-12"><span class="nav-number">5.2.</span> <span class="nav-text">500.12</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#500-13"><span class="nav-number">5.3.</span> <span class="nav-text">500.13</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#500-15"><span class="nav-number">5.4.</span> <span class="nav-text">500.15</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#500-16"><span class="nav-number">5.5.</span> <span class="nav-text">500.16</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#500-18"><span class="nav-number">5.6.</span> <span class="nav-text">500.18</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#500-100"><span class="nav-number">5.7.</span> <span class="nav-text">500.100</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#501-Not-Implemented"><span class="nav-number">5.8.</span> <span class="nav-text">501 Not Implemented</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#502-Bad-Gateway"><span class="nav-number">5.9.</span> <span class="nav-text">502 Bad Gateway</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#502-1"><span class="nav-number">5.10.</span> <span class="nav-text">502.1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#502-2"><span class="nav-number">5.11.</span> <span class="nav-text">502.2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#503-Service-Unavailable"><span class="nav-number">5.12.</span> <span class="nav-text">503 Service Unavailable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#504-Gateway-Timeout"><span class="nav-number">5.13.</span> <span class="nav-text">504 Gateway Timeout</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#505-HTTP-Version-Not-Supported"><span class="nav-number">5.14.</span> <span class="nav-text">505 HTTP Version Not Supported</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+	  
+
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://dword.top/状态码.html';
+          this.page.identifier = '状态码.html';
+          this.page.title = '响应码';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'iwNCetUPAyqVKr2mU3Tv6Cu9-gzGzoHsz',
+        appKey: '8nekLq4WC7dOSvC8jK0gBiJ2',
+        placeholder: 'Just go go',
+        avatar:'identicon',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
