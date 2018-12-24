@@ -4,6 +4,148 @@
 
     
   <url>
+    <loc>https://dword.top/requests.html</loc>
+    <lastmod>2018-12-24T02:40:40.350Z</lastmod>
+    <data>
+        <display>
+        <title>requests</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+        <tag>requests</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/Selenium+PhantomJS.html</loc>
+    <lastmod>2018-12-24T02:40:33.258Z</lastmod>
+    <data>
+        <display>
+        <title>Selenium+PhantomJS</title>
+        <pubTime>2017-10-11T16:00:00.000Z</pubTime>
+        
+        <tag>Selenium+PhantomJS</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/tcp.html</loc>
+    <lastmod>2018-12-24T02:40:25.605Z</lastmod>
+    <data>
+        <display>
+        <title>tcp</title>
+        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
+        
+        <tag>网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/tcp%E5%92%8Cudp%E7%9A%84%E5%AF%B9%E6%AF%94.html</loc>
+    <lastmod>2018-12-24T02:40:18.604Z</lastmod>
+    <data>
+        <display>
+        <title>tcp与udp对比</title>
+        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
+        
+        <tag>网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/udp.html</loc>
+    <lastmod>2018-12-24T02:40:11.902Z</lastmod>
+    <data>
+        <display>
+        <title>udp</title>
+        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
+        
+        <tag>网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95.html</loc>
+    <lastmod>2018-12-24T02:40:03.259Z</lastmod>
+    <data>
+        <display>
+        <title>常见排序算法</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+        <tag>常见排序</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/%E5%BE%97%E5%88%B0%E6%95%B0%E6%8D%AE.html</loc>
+    <lastmod>2018-12-24T02:39:55.556Z</lastmod>
+    <data>
+        <display>
+        <title>结构化非结构化数据处理</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+        <tag>xpath</tag>
+         
+        <tag>re</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://dword.top/%E7%8A%B6%E6%80%81%E7%A0%81.html</loc>
     <lastmod>2018-12-24T02:39:00.425Z</lastmod>
     <data>
@@ -32,148 +174,6 @@
         <pubTime>2017-12-11T16:00:00.000Z</pubTime>
         
         <tag>网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/Selenium+PhantomJS.html</loc>
-    <lastmod>2018-12-24T02:35:07.356Z</lastmod>
-    <data>
-        <display>
-        <title>Selenium+PhantomJS</title>
-        <pubTime>2017-10-11T16:00:00.000Z</pubTime>
-        
-        <tag>Selenium+PhantomJS</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/requests.html</loc>
-    <lastmod>2018-12-24T02:34:58.258Z</lastmod>
-    <data>
-        <display>
-        <title>requests</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-        <tag>requests</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95.html</loc>
-    <lastmod>2018-12-24T02:34:37.728Z</lastmod>
-    <data>
-        <display>
-        <title>常见排序算法</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-        <tag>常见排序</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/tcp.html</loc>
-    <lastmod>2018-12-24T02:33:23.867Z</lastmod>
-    <data>
-        <display>
-        <title>tcp</title>
-        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
-        
-        <tag>网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/tcp%E5%92%8Cudp%E7%9A%84%E5%AF%B9%E6%AF%94.html</loc>
-    <lastmod>2018-12-24T02:33:14.743Z</lastmod>
-    <data>
-        <display>
-        <title>tcp与udp对比</title>
-        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
-        
-        <tag>网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/udp.html</loc>
-    <lastmod>2018-12-24T02:33:01.242Z</lastmod>
-    <data>
-        <display>
-        <title>udp</title>
-        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
-        
-        <tag>网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/%E5%BE%97%E5%88%B0%E6%95%B0%E6%8D%AE.html</loc>
-    <lastmod>2018-12-24T02:28:35.530Z</lastmod>
-    <data>
-        <display>
-        <title>结构化非结构化数据处理</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-        <tag>xpath</tag>
-         
-        <tag>re</tag>
          
          
            
