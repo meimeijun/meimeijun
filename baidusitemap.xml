@@ -4,14 +4,54 @@
 
     
   <url>
+    <loc>https://dword.top/tcp.html</loc>
+    <lastmod>2018-12-24T02:33:23.867Z</lastmod>
+    <data>
+        <display>
+        <title>tcp</title>
+        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
+        
+        <tag>网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://dword.top/tcp%E5%92%8Cudp%E7%9A%84%E5%AF%B9%E6%AF%94.html</loc>
+    <lastmod>2018-12-24T02:33:14.743Z</lastmod>
+    <data>
+        <display>
+        <title>tcp与udp对比</title>
+        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
+        
+        <tag>网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://dword.top/udp.html</loc>
-    <lastmod>2018-12-24T02:30:28.696Z</lastmod>
+    <lastmod>2018-12-24T02:33:01.242Z</lastmod>
     <data>
         <display>
         <title>udp</title>
         <pubTime>2017-12-11T16:00:00.000Z</pubTime>
         
-        <tag>-网络</tag>
+        <tag>网络</tag>
          
          
            
@@ -52,46 +92,6 @@
         <pubTime>2017-10-10T16:00:00.000Z</pubTime>
         
         <tag>-requests</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/tcp%E5%92%8Cudp%E7%9A%84%E5%AF%B9%E6%AF%94.html</loc>
-    <lastmod>2018-12-24T02:29:46.574Z</lastmod>
-    <data>
-        <display>
-        <title>tcp与udp对比</title>
-        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
-        
-        <tag>-网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="-python" url="https://dword.top/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://dword.top/tcp.html</loc>
-    <lastmod>2018-12-24T02:29:39.749Z</lastmod>
-    <data>
-        <display>
-        <title>tcp</title>
-        <pubTime>2017-12-11T16:00:00.000Z</pubTime>
-        
-        <tag>-网络</tag>
          
          
            
